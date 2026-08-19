@@ -375,7 +375,7 @@
       min-height:0;height:100%;overflow:auto;border:1px solid var(--line);border-radius:var(--radius);
       background:color-mix(in srgb,var(--panel) 88%,transparent);box-shadow:var(--shadow);padding:0
     }
-    .x-feed{width:min(760px,100%);min-height:100%;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);background:var(--panel)}
+    .x-feed{width:min(820px,100%);min-height:100%;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);background:var(--panel)}
     .x-feed-loading{padding:36px;text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
     .x-config{display:none;position:absolute;inset:0;z-index:20;background:rgba(8,10,14,.42);backdrop-filter:blur(10px);place-items:center;padding:16px}
     .x-config.open{display:grid}
@@ -383,7 +383,7 @@
     .x-config-note{font-size:11px;color:var(--muted);line-height:1.65;margin:8px 0}
     .x-config-card .field{width:100%}
 
-    /* Music · YouTube Music-inspired, no dead inner nav */
+    /* Music · compact YouTube player + Tsugi library */
     .music-shell{
       height:100%;min-height:0;border:1px solid var(--line);border-radius:var(--radius);
       background:color-mix(in srgb,var(--panel) 80%,transparent);box-shadow:var(--shadow);overflow:hidden
@@ -397,36 +397,50 @@
     .music-brand i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#ff0033;color:white;font-style:normal;font-size:13px}
     .music-search{flex:1;min-width:170px;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:10px 14px}
     .music-top button,.music-top a{border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:9px 12px;font-size:11px}
-    .music-hero{display:grid;grid-template-columns:minmax(280px,.86fr) minmax(420px,1.14fr);gap:14px;margin-bottom:18px}
-    .music-now{
-      min-height:248px;border-radius:21px;border:1px solid var(--line);padding:19px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
-      background:radial-gradient(circle at 78% 17%,color-mix(in srgb,var(--accent2) 54%,transparent),transparent 43%),
-                 radial-gradient(circle at 10% 90%,color-mix(in srgb,var(--accent) 44%,transparent),transparent 46%),var(--panel2)
+
+    .music-playerbar{
+      border:1px solid var(--line);border-radius:18px;background:var(--panel2);
+      display:grid;grid-template-columns:minmax(300px,1fr) 220px;gap:12px;padding:12px;margin-bottom:18px;align-items:stretch
     }
-    .music-kicker{font-size:10px;letter-spacing:.13em;color:var(--muted);font-weight:850}
-    .music-now h2{font-size:30px;line-height:1.04;letter-spacing:-.04em;margin:8px 0 6px}
-    .music-now p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
-    .music-player{min-height:248px;border:1px solid var(--line);border-radius:21px;overflow:hidden;background:#151515;position:relative}
-    .music-player iframe{display:block;width:100%;height:100%;min-height:248px;border:0}
-    .music-player-empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:26px;color:#c5cad3;background:linear-gradient(145deg,#13161e,#272d3b);font-size:12px;line-height:1.65}
-    .music-section{margin-top:20px}
+    .music-controls{min-width:0;display:flex;flex-direction:column;justify-content:center;padding:5px 8px}
+    .music-kicker{font-size:9px;letter-spacing:.13em;color:var(--muted);font-weight:850}
+    .music-controls h2{font-size:22px;line-height:1.08;margin:6px 0 3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .music-controls p{font-size:11px;color:var(--muted);margin:0 0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .music-buttons{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+    .music-buttons button{width:34px;height:34px;border:1px solid var(--line);background:var(--panel);border-radius:50%;padding:0;font-size:14px}
+    .music-buttons .play{width:40px;height:40px;background:var(--text);color:var(--bg);font-size:15px}
+    .music-time{margin-left:auto;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+    .music-progress{width:100%;height:6px;border-radius:999px;background:color-mix(in srgb,var(--muted) 20%,transparent);appearance:none;cursor:pointer}
+    .music-progress::-webkit-slider-thumb{appearance:none;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+    .music-progress::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:var(--accent)}
+    .music-video{
+      width:220px;height:200px;min-width:220px;min-height:200px;border-radius:13px;overflow:hidden;background:#111;border:1px solid var(--line);position:relative
+    }
+    .music-video iframe,.music-video>div{width:100%;height:100%;min-height:200px;border:0}
+    .music-player-empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:15px;color:#c5cad3;background:linear-gradient(145deg,#13161e,#272d3b);font-size:10px;line-height:1.55}
+
+    .music-section{margin-top:19px}
     .music-section-head{display:flex;align-items:center;gap:8px;margin-bottom:9px}
     .music-section-head h3{font-size:18px;margin:0}.music-section-head span{font-size:10px;color:var(--muted)}
     .music-section-head button{margin-left:auto;border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:6px 9px;font-size:10px}
     .music-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:9px}
     .music-card{min-width:0;border:1px solid var(--line);background:var(--panel2);border-radius:15px;padding:11px}
-    .music-cover{aspect-ratio:1;border-radius:12px;display:grid;place-items:center;font-size:34px;margin-bottom:9px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 20%,var(--panel)),color-mix(in srgb,var(--accent2) 22%,var(--panel2)))}
+    .music-cover{aspect-ratio:1.35;border-radius:12px;display:grid;place-items:center;font-size:28px;margin-bottom:9px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 20%,var(--panel)),color-mix(in srgb,var(--accent2) 22%,var(--panel2)))}
     .music-card b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .music-card small{display:block;font-size:10px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .music-card-actions{display:flex;gap:5px;margin-top:9px}.music-card-actions button,.music-card-actions a{flex:1;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px;font-size:9px;text-align:center}
     .music-artists{display:flex;gap:10px;overflow:auto;padding:2px 0 4px}
-    .music-artist{flex:0 0 94px;text-align:center}
-    .music-avatar{width:66px;height:66px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;border:1px solid var(--line);background:linear-gradient(145deg,color-mix(in srgb,var(--accent2) 24%,var(--panel)),var(--panel2));font-size:21px}
+    .music-artist{flex:0 0 100px;text-align:center;cursor:pointer;border:0;background:transparent;color:var(--text);padding:3px}
+    .music-avatar{width:68px;height:68px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;border:1px solid var(--line);background:linear-gradient(145deg,color-mix(in srgb,var(--accent2) 24%,var(--panel)),var(--panel2));font-size:21px}
     .music-artist b{display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .music-sync-note{font-size:11px;color:var(--muted);line-height:1.55;padding:9px 11px;border:1px dashed var(--line);border-radius:11px;margin-bottom:10px}
     .music-library-add{display:grid;grid-template-columns:1fr 1.6fr auto;gap:7px;margin-top:9px}.music-library-add input{min-width:0}
-    @media(max-width:1000px){.music-hero{grid-template-columns:1fr}.x-feed{width:min(720px,100%)}}
-    @media(max-width:740px){.music-main{padding:10px}.music-top{top:-10px;flex-wrap:wrap}.music-brand{width:100%}.music-search{flex:1 1 100%}.music-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.music-library-add{grid-template-columns:1fr}.music-player,.music-player iframe{min-height:220px}}
+    .artist-bind{display:none;position:fixed;inset:0;z-index:60;background:rgba(8,10,14,.45);backdrop-filter:blur(9px);place-items:center;padding:16px}
+    .artist-bind.open{display:grid}.artist-bind-card{width:min(620px,96vw);border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:16px;box-shadow:var(--shadow)}
+    .artist-bind-actions{display:flex;gap:7px;margin-top:9px}.artist-bind-actions input{flex:1}
+    @media(max-width:900px){.music-playerbar{grid-template-columns:1fr}.music-video{width:100%;height:220px}.music-video iframe,.music-video>div{min-height:220px}}
+    @media(max-width:740px){.music-main{padding:10px}.music-top{top:-10px;flex-wrap:wrap}.music-brand{width:100%}.music-search{flex:1 1 100%}.music-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.music-library-add{grid-template-columns:1fr}}
+
 
     .embed-loading{
       position:absolute;inset:0;z-index:2;display:grid;place-items:center;
@@ -650,31 +664,27 @@
             <a href="https://music.youtube.com/" target="_blank" rel="noopener">打开 YT Music ↗</a>
           </div>
 
-          <div class="music-hero">
-            <div class="music-now">
+          <div class="music-playerbar">
+            <div class="music-controls">
               <div class="music-kicker">NOW PLAYING</div>
               <h2 id="musicNowTitle">Daily Nexus Music</h2>
-              <p id="musicNowMeta">使用官方 YouTube Embed 播放公开视频与公开播放列表。</p>
+              <p id="musicNowMeta">选择播放列表或艺人开始播放</p>
+              <div class="music-buttons">
+                <button id="musicPrev" title="上一首">◀</button>
+                <button class="play" id="musicToggle" title="播放 / 暂停">▶</button>
+                <button id="musicNext" title="下一首">▶|</button>
+                <span class="music-time"><span id="musicCurrent">0:00</span> / <span id="musicDuration">0:00</span></span>
+              </div>
+              <input class="music-progress" id="musicProgress" type="range" min="0" max="1000" value="0" aria-label="播放进度">
             </div>
-            <div class="music-player">
-              <div class="music-player-empty" id="musicPlayerEmpty"><div>♫<br><br>粘贴 YouTube / YouTube Music 视频或公开 Playlist URL<br><span id="musicPlayerHint">部署到 HTTPS 后播放最稳定</span></div></div>
-              <iframe id="musicPlayerFrame" title="YouTube Player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="music-video" id="musicVideoBox">
+              <div id="musicYTPlayer"></div>
+              <div class="music-player-empty" id="musicPlayerEmpty">YouTube 官方播放器必须保持可见。<br>选择内容后这里会显示最小尺寸播放器。</div>
             </div>
           </div>
 
           <section class="music-section">
-            <div class="music-section-head"><h3>关注艺人 · 最近新曲</h3><span id="musicSyncStatus">自动读取 Tsugi</span><button id="refreshMusic">重新同步</button></div>
-            <div class="music-sync-note">艺人关注列表只由 <b>Tsugi</b> 管理。Daily Nexus 不再维护第二份关注名单；修改后回到这里会自动重新读取。</div>
-            <div class="music-cards" id="musicReleaseCards"></div>
-          </section>
-
-          <section class="music-section">
-            <div class="music-section-head"><h3>关注艺人</h3><span>tsugi-followed-artists-v1</span><button id="manageArtistsInTsugi">在追更管理</button></div>
-            <div class="music-artists" id="musicArtistRow"></div>
-          </section>
-
-          <section class="music-section">
-            <div class="music-section-head"><h3>你的播放列表</h3><span>本地只保存 URL</span></div>
+            <div class="music-section-head"><h3>你的播放列表</h3><span>第一个显示 · 本地只保存 URL</span></div>
             <div class="music-cards" id="musicLibraryCards"></div>
             <div class="music-library-add">
               <input class="field" id="musicPlaylistName" placeholder="播放列表名称">
@@ -682,7 +692,30 @@
               <button class="save" id="addMusicPlaylist">＋ 添加</button>
             </div>
           </section>
+
+          <section class="music-section">
+            <div class="music-section-head"><h3>关注艺人</h3><span>点击艺人直接播放已绑定歌单</span><button id="manageArtistsInTsugi">在追更管理</button></div>
+            <div class="music-sync-note">艺人名单与 Playlist 绑定都写入 <b>Tsugi</b> 的 <code>tsugi-followed-artists-v1</code>。第一次点击尚未绑定的艺人时，只需绑定一次公开 YouTube / YouTube Music Playlist。</div>
+            <div class="music-artists" id="musicArtistRow"></div>
+          </section>
+
+          <section class="music-section">
+            <div class="music-section-head"><h3>关注艺人 · 最近新曲</h3><span id="musicSyncStatus">自动读取 Tsugi</span><button id="refreshMusic">重新同步</button></div>
+            <div class="music-cards" id="musicReleaseCards"></div>
+          </section>
         </main>
+      </div>
+
+      <div class="artist-bind" id="artistBindModal">
+        <div class="artist-bind-card">
+          <div class="modaltop"><h3 id="artistBindTitle">绑定艺人播放列表</h3><button class="iconbtn" id="closeArtistBind">×</button></div>
+          <p class="hint">YouTube 官方 Embed 已不支持“按搜索词生成播放队列”，因此纯静态网页无法仅凭艺人名自动解析官方播放列表。这里把 Playlist URL 直接保存进 Tsugi 的艺人记录，之后点击艺人即可直接播放。</p>
+          <div class="artist-bind-actions">
+            <input class="field" id="artistPlaylistUrl" placeholder="粘贴 YouTube / YouTube Music Playlist URL">
+            <button class="save" id="saveArtistPlaylist">保存到 Tsugi</button>
+          </div>
+          <div style="margin-top:8px"><a id="artistYTSearch" target="_blank" rel="noopener" class="pillbtn">在 YouTube Music 搜索这个艺人 ↗</a></div>
+        </div>
       </div>
     </section>
 
@@ -2401,7 +2434,7 @@ function switchNexusView(view){
   if(view==='links')renderDeskLinks();
 }
 
-/* ---------- X · single public timeline ---------- */
+/* ---------- X · official oEmbed single timeline ---------- */
 let xWidgetPromise=null,xRefreshTimer=null;
 function validXTimelineUrl(raw){
   const v=String(raw||"").trim();
@@ -2414,65 +2447,112 @@ function loadXWidgetScript(){
   if(window.twttr?.widgets)return Promise.resolve(window.twttr);
   if(xWidgetPromise)return xWidgetPromise;
   xWidgetPromise=new Promise((resolve,reject)=>{
-    const id="nexus-x-wjs";
-    let sc=document.getElementById(id);
+    let sc=document.getElementById("nexus-x-wjs");
     if(!sc){
-      sc=document.createElement("script");sc.id=id;sc.async=true;sc.src="https://platform.x.com/widgets.js";sc.charset="utf-8";
+      sc=document.createElement("script");
+      sc.id="nexus-x-wjs";sc.async=true;sc.src="https://platform.x.com/widgets.js";sc.charset="utf-8";
       document.head.appendChild(sc);
     }
     const started=Date.now(),timer=setInterval(()=>{
       if(window.twttr?.widgets){clearInterval(timer);resolve(window.twttr)}
-      else if(Date.now()-started>9000){clearInterval(timer);reject(new Error("X widget timeout"))}
+      else if(Date.now()-started>10000){clearInterval(timer);reject(new Error("widgets.js timeout"))}
     },100);
-    sc.onerror=()=>{clearInterval(timer);reject(new Error("X widget script blocked"))};
+    sc.onerror=()=>{clearInterval(timer);reject(new Error("platform.x.com/widgets.js 被拦截"))};
   });
   return xWidgetPromise;
 }
+async function fetchXOEmbed(url){
+  const theme=document.documentElement.dataset.theme==="dark"?"dark":"light";
+  const endpoint=`https://publish.x.com/oembed?url=${encodeURIComponent(url)}&omit_script=1&theme=${theme}&dnt=true&chrome=${encodeURIComponent("noheader nofooter transparent")}&maxwidth=820&maxheight=1200&limit=20`;
+  const targets=[
+    endpoint,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(endpoint)}`
+  ];
+  let last;
+  for(const target of targets){
+    try{
+      const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),9000);
+      const r=await fetch(target,{signal:ctrl.signal});clearTimeout(tm);
+      if(!r.ok)throw new Error(`oEmbed HTTP ${r.status}`);
+      const data=await r.json();
+      if(data?.html)return data;
+      throw new Error("oEmbed 没有返回 Timeline markup");
+    }catch(e){last=e}
+  }
+  throw last||new Error("oEmbed unavailable");
+}
 async function renderXTimeline(force=false){
-  const host=$("#xFeed"),url=validXTimelineUrl(state.xTimelineSource),open=$("#openXSource");
+  const host=$("#xFeed"),url=validXTimelineUrl(state.xTimelineSource),open=$("#openXSource"),note=$("#xRefreshNote");
   if(!host)return;
   if(open)open.href=url||"https://x.com/";
   $("#xTimelineUrl").value=url||"";
   if(!url){
-    host.innerHTML='<div class="x-feed-loading">还没有 Timeline 来源。点击「来源」粘贴一个公开 X List URL。</div>';return
+    host.innerHTML='<div class="x-feed-loading">还没有 Timeline 来源。点击「来源」粘贴公开 X Profile 或 List URL。</div>';return;
   }
-  const theme=document.documentElement.dataset.theme==="dark"?"dark":"light";
-  host.innerHTML=`<a class="twitter-timeline" data-theme="${theme}" data-dnt="true" data-chrome="noheader nofooter transparent" data-tweet-limit="30" href="${escapeAttr(url)}">正在加载 X Timeline…</a>`;
+  host.innerHTML='<div class="x-feed-loading">正在向 X Publish 请求 Timeline…</div>';
+  if(note)note.textContent="连接 X…";
   try{
+    const data=await fetchXOEmbed(url);
+    // X oEmbed may change markup over time; use exactly the canonical HTML it returns,
+    // but strip script tags because we load widgets.js once ourselves.
+    const box=document.createElement("div");
+    box.innerHTML=String(data.html).replace(/<script[\s\S]*?<\/script>/gi,"");
+    const timeline=box.querySelector(".twitter-timeline");
+    if(timeline){
+      timeline.dataset.height="1200";
+      timeline.dataset.dnt="true";
+      timeline.dataset.theme=document.documentElement.dataset.theme==="dark"?"dark":"light";
+      timeline.dataset.chrome="noheader nofooter transparent";
+    }
+    host.innerHTML="";
+    while(box.firstChild)host.appendChild(box.firstChild);
     const tw=await loadXWidgetScript();
-    await tw.widgets.load(host);
-    setTimeout(()=>{
+    tw.widgets.load(host);
+    const started=Date.now();
+    const detector=setInterval(()=>{
       const iframe=host.querySelector("iframe");
-      if(!iframe){
-        host.innerHTML=`<div class="x-feed-loading">X 官方 Embed 没有成功载入。浏览器的跟踪保护 / 广告拦截可能阻止了 platform.x.com。<br><br><a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a></div>`;
+      if(iframe){
+        clearInterval(detector);
+        iframe.style.width="100%";
+        if(note)note.textContent="自动 5 分钟 · X oEmbed";
+      }else if(Date.now()-started>9000){
+        clearInterval(detector);
+        host.innerHTML=`<div class="x-feed-loading">
+          X 官方 oEmbed 已返回 markup，但 widgets.js 没有生成 Timeline iframe。<br><br>
+          这通常表示浏览器 / DNS / 扩展阻止了 X for Websites 资源。<br><br>
+          <a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a>
+        </div>`;
+        if(note)note.textContent="X widget 被阻止";
       }
-    },4500);
+    },250);
   }catch(e){
-    host.innerHTML=`<div class="x-feed-loading">X 官方 Embed 无法载入。<br>${escapeHtml(e.message)}<br><br><a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a></div>`;
+    host.innerHTML=`<div class="x-feed-loading">
+      无法读取 X 官方 oEmbed：${escapeHtml(e.message)}<br><br>
+      <a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a>
+    </div>`;
+    if(note)note.textContent="X oEmbed 失败";
   }
 }
 function ensureXTimeline(){
   window.__xTimelineInitialized=true;
   renderXTimeline();
-  if(!xRefreshTimer){
-    xRefreshTimer=setInterval(()=>{
-      if($("#view-x")?.classList.contains("active"))renderXTimeline(true);
-    },5*60*1000);
-  }
+  if(!xRefreshTimer)xRefreshTimer=setInterval(()=>{
+    if($("#view-x")?.classList.contains("active"))renderXTimeline(true);
+  },5*60*1000);
 }
 $("#openXConfig").onclick=()=>{$("#xTimelineUrl").value=state.xTimelineSource||"";$("#xConfig").classList.add("open")};
 $("#closeXConfig").onclick=()=>$("#xConfig").classList.remove("open");
 $("#xConfig").onclick=e=>{if(e.target===$("#xConfig"))$("#xConfig").classList.remove("open")};
 $("#saveXTimeline").onclick=()=>{
   const url=validXTimelineUrl($("#xTimelineUrl").value);
-  if(!url){alert("请输入有效的 x.com 公开账号或公开 List URL。");return}
+  if(!url){alert("请输入有效的 x.com 公开 Profile 或 List URL。");return}
   state.xTimelineSource=url;store.set("xTimelineSource",url);$("#xConfig").classList.remove("open");renderXTimeline(true);
 };
 $("#xUseDemo").onclick=()=>$("#xTimelineUrl").value="https://x.com/OpenAI";
 $("#refreshXTimeline").onclick=()=>renderXTimeline(true);
 
 /* ---------- Music ---------- */
-let musicSyncBusy=false;
+let musicSyncBusy=false,musicPlayer=null,musicPlayerReady=false,musicProgressTimer=null,currentBindArtist="";
 function parseYTMedia(raw){
   const text=String(raw||"").trim();if(!text)return null;
   try{
@@ -2488,32 +2568,122 @@ function parseYTMedia(raw){
   return null;
 }
 function ytMusicSearchUrl(q){return`https://music.youtube.com/search?q=${encodeURIComponent(q)}`}
-function setMusicPlayer(raw,title=""){
-  const parsed=parseYTMedia(raw),frame=$("#musicPlayerFrame"),empty=$("#musicPlayerEmpty");
-  if(!parsed||!frame)return false;
-  if(location.protocol==="file:"){
-    frame.src="about:blank";empty.style.display="grid";
-    empty.innerHTML='<div>⚠ YouTube Error 153 防护<br><br>当前页面是 file:// 本地文件。YouTube Embed 需要 HTTP Referer；请部署到 GitHub Pages 的 HTTPS 地址后再测试播放器。</div>';
-    return true;
-  }
-  const origin=location.origin;
-  const ref=location.href.split("#")[0];
-  const common=`autoplay=1&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(origin)}&widget_referrer=${encodeURIComponent(ref)}`;
-  frame.referrerPolicy="strict-origin-when-cross-origin";
-  frame.src="about:blank";
-  requestAnimationFrame(()=>{
-    frame.src=parsed.type==="playlist"
-      ?`https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(parsed.id)}&${common}`
-      :`https://www.youtube.com/embed/${encodeURIComponent(parsed.id)}?${common}`;
+function formatMusicTime(sec){
+  sec=Math.max(0,Math.floor(Number(sec)||0));return`${Math.floor(sec/60)}:${String(sec%60).padStart(2,"0")}`;
+}
+function loadYTApi(){
+  if(window.YT?.Player)return Promise.resolve();
+  if(window.__ytApiPromise)return window.__ytApiPromise;
+  window.__ytApiPromise=new Promise((resolve,reject)=>{
+    const old=window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady=()=>{try{old?.()}catch(_){}resolve()};
+    if(!document.querySelector('script[src*="youtube.com/iframe_api"]')){
+      const sc=document.createElement("script");sc.src="https://www.youtube.com/iframe_api";sc.async=true;sc.onerror=()=>reject(new Error("YouTube IFrame API failed"));document.head.appendChild(sc);
+    }
+    setTimeout(()=>window.YT?.Player&&resolve(),6000);
   });
-  empty.style.display="none";
+  return window.__ytApiPromise;
+}
+async function ensureMusicPlayer(){
+  if(musicPlayerReady&&musicPlayer)return musicPlayer;
+  if(location.protocol==="file:"){
+    $("#musicPlayerEmpty").innerHTML="本地 file:// 无法可靠提供 YouTube HTTP Referer。<br>请在 GitHub Pages HTTPS 地址测试。";
+    return null;
+  }
+  await loadYTApi();
+  if(musicPlayer)return musicPlayer;
+  musicPlayer=await new Promise(resolve=>{
+    const p=new YT.Player("musicYTPlayer",{
+      width:220,height:200,
+      playerVars:{playsinline:1,origin:location.origin,rel:0},
+      events:{
+        onReady:()=>{musicPlayerReady=true;$("#musicPlayerEmpty").style.display="none";startMusicProgress();resolve(p)},
+        onStateChange:e=>{
+          $("#musicToggle").textContent=e.data===YT.PlayerState.PLAYING?"Ⅱ":"▶";
+          if(e.data===YT.PlayerState.PLAYING)startMusicProgress();
+        },
+        onError:e=>{
+          $("#musicNowMeta").textContent=`YouTube 播放错误 ${e.data}`;
+        }
+      }
+    });
+  });
+  return musicPlayer;
+}
+function startMusicProgress(){
+  clearInterval(musicProgressTimer);
+  musicProgressTimer=setInterval(()=>{
+    if(!musicPlayerReady||!musicPlayer)return;
+    try{
+      const cur=musicPlayer.getCurrentTime()||0,dur=musicPlayer.getDuration()||0;
+      $("#musicCurrent").textContent=formatMusicTime(cur);$("#musicDuration").textContent=formatMusicTime(dur);
+      if(dur>0)$("#musicProgress").value=Math.round(cur/dur*1000);
+      const data=musicPlayer.getVideoData?.();
+      if(data?.title&&$("#musicNowTitle").textContent!==data.title)$("#musicNowTitle").textContent=data.title;
+    }catch(_){}
+  },500);
+}
+async function playMusicMedia(raw,title=""){
+  const parsed=parseYTMedia(raw);if(!parsed)return false;
+  const p=await ensureMusicPlayer();if(!p)return true;
   $("#musicNowTitle").textContent=title||(parsed.type==="playlist"?"Playlist":"YouTube");
-  $("#musicNowMeta").textContent=parsed.type==="playlist"?"官方 YouTube Playlist Player":"官方 YouTube Embed Player";
+  $("#musicNowMeta").textContent=parsed.type==="playlist"?"YouTube Playlist":"YouTube";
+  if(parsed.type==="playlist"){
+    p.loadPlaylist({list:parsed.id,listType:"playlist",index:0,startSeconds:0});
+  }else p.loadVideoById(parsed.id);
   return true;
 }
+$("#musicToggle").onclick=async()=>{
+  const p=await ensureMusicPlayer();if(!p)return;
+  const st=p.getPlayerState();st===YT.PlayerState.PLAYING?p.pauseVideo():p.playVideo();
+};
+$("#musicPrev").onclick=async()=>{const p=await ensureMusicPlayer();p?.previousVideo?.()};
+$("#musicNext").onclick=async()=>{const p=await ensureMusicPlayer();p?.nextVideo?.()};
+$("#musicProgress").oninput=e=>{
+  if(!musicPlayerReady||!musicPlayer)return;
+  const dur=musicPlayer.getDuration()||0;if(dur)musicPlayer.seekTo(dur*(+e.target.value/1000),true);
+};
+
+function tsugiArtistsRaw(){
+  try{const a=JSON.parse(localStorage.getItem(TSUGI_ARTIST_KEY)||"[]");return Array.isArray(a)?a:[]}catch{return[]}
+}
+function writeTsugiArtists(rows){
+  localStorage.setItem(TSUGI_ARTIST_KEY,JSON.stringify(rows||[]));
+  renderUpcomingArtists();renderMusicArtists();
+}
+function artistPlaylist(a){
+  return a?.youtubePlaylist||a?.youtube_music_playlist||a?.playlistUrl||"";
+}
+function bindArtistPlaylist(name){
+  currentBindArtist=name;
+  $("#artistBindTitle").textContent=`${name} · 绑定播放列表`;
+  $("#artistPlaylistUrl").value="";
+  $("#artistYTSearch").href=ytMusicSearchUrl(`${name} popular songs`);
+  $("#artistBindModal").classList.add("open");
+}
+$("#closeArtistBind").onclick=()=>$("#artistBindModal").classList.remove("open");
+$("#artistBindModal").onclick=e=>{if(e.target===$("#artistBindModal"))$("#artistBindModal").classList.remove("open")};
+$("#saveArtistPlaylist").onclick=()=>{
+  const url=$("#artistPlaylistUrl").value.trim(),parsed=parseYTMedia(url);
+  if(!currentBindArtist||!parsed||parsed.type!=="playlist"){alert("请粘贴有效的公开 YouTube / YouTube Music Playlist URL。");return}
+  const rows=tsugiArtistsRaw(),idx=rows.findIndex(a=>String(a.name).toLowerCase()===currentBindArtist.toLowerCase());
+  if(idx<0){alert("Tsugi 中没有找到该艺人。");return}
+  rows[idx]={...rows[idx],youtubePlaylist:url};
+  writeTsugiArtists(rows);
+  $("#artistBindModal").classList.remove("open");
+  playMusicMedia(url,currentBindArtist);
+};
+
 function renderMusicArtists(){
   const host=$("#musicArtistRow"),artists=readFollowedArtists();if(!host)return;
-  host.innerHTML=artists.length?artists.map(a=>`<a class="music-artist" href="${escapeAttr(ytMusicSearchUrl(a.name))}" target="_blank" rel="noopener"><span class="music-avatar">♫</span><b>${escapeHtml(a.name)}</b></a>`).join(""):'<div class="upcoming-empty" style="min-width:100%">Tsugi 当前没有关注艺人。请在「追更」Tab 中管理。</div>';
+  host.innerHTML=artists.length?artists.map(a=>`
+    <button class="music-artist" data-music-artist="${escapeAttr(a.name)}">
+      <span class="music-avatar">${artistPlaylist(a)?"▶":"♫"}</span><b>${escapeHtml(a.name)}</b>
+    </button>`).join(""):'<div class="upcoming-empty" style="min-width:100%">Tsugi 当前没有关注艺人。请在「追更」Tab 中管理。</div>';
+  $$("[data-music-artist]").forEach(b=>b.onclick=()=>{
+    const name=b.dataset.musicArtist,a=readFollowedArtists().find(x=>x.name===name),url=artistPlaylist(a);
+    url?playMusicMedia(url,name):bindArtistPlaylist(name);
+  });
 }
 function renderMusicReleases(){
   const host=$("#musicReleaseCards");if(!host)return;
@@ -2528,35 +2698,30 @@ function renderMusicReleases(){
 function renderMusicLibrary(){
   const host=$("#musicLibraryCards"),rows=Array.isArray(state.musicLibrary)?state.musicLibrary:[];if(!host)return;
   host.innerHTML=rows.length?rows.map((x,i)=>`<article class="music-card"><div class="music-cover">▶</div><b>${escapeHtml(x.name||"Playlist")}</b><small>YouTube Playlist</small><div class="music-card-actions"><button data-music-list-play="${i}">播放</button><button data-music-list-del="${i}">删除</button></div></article>`).join(""):'<div class="upcoming-empty" style="grid-column:1/-1">还没有保存播放列表。</div>';
-  $$("[data-music-list-play]").forEach(b=>b.onclick=()=>{const x=state.musicLibrary[+b.dataset.musicListPlay];if(x)setMusicPlayer(x.url,x.name)});
+  $$("[data-music-list-play]").forEach(b=>b.onclick=()=>{const x=state.musicLibrary[+b.dataset.musicListPlay];if(x)playMusicMedia(x.url,x.name)});
   $$("[data-music-list-del]").forEach(b=>b.onclick=()=>{state.musicLibrary.splice(+b.dataset.musicListDel,1);store.set("musicLibrary",state.musicLibrary);renderMusicLibrary()});
 }
 async function syncMusicFromTsugi(force=true){
   if(musicSyncBusy)return;musicSyncBusy=true;
-  const status=$("#musicSyncStatus");
-  if(status)status.textContent="正在同步 Tsugi…";
+  const status=$("#musicSyncStatus");if(status)status.textContent="正在同步 Tsugi…";
   try{
-    await syncArtistsFromTsugiOrigin();
-    renderMusicArtists();
+    await syncArtistsFromTsugiOrigin();renderMusicArtists();
     const artists=readFollowedArtists();
     if(artists.length){
-      await loadUpcoming(force);
-      renderMusicReleases();
+      await loadUpcoming(force);renderMusicReleases();
       if(status)status.textContent=`Tsugi · ${artists.length} 位艺人 · 已同步`;
     }else{
-      upcomingMusic=[];renderMusicReleases();
-      if(status)status.textContent="Tsugi · 0 位艺人";
+      upcomingMusic=[];renderMusicReleases();if(status)status.textContent="Tsugi · 0 位艺人";
     }
   }finally{musicSyncBusy=false}
 }
 function ensureMusicTab(){
   window.__musicInitialized=true;
-  renderMusicLibrary();
-  syncMusicFromTsugi(false);
+  renderMusicLibrary();renderMusicArtists();syncMusicFromTsugi(false);
 }
 $("#musicPlay").onclick=()=>{
   const q=$("#musicInput").value.trim();if(!q)return;
-  if(!setMusicPlayer(q))window.open(ytMusicSearchUrl(q),"_blank","noopener");
+  playMusicMedia(q).then(ok=>{if(!ok)window.open(ytMusicSearchUrl(q),"_blank","noopener")});
 };
 $("#musicSearch").onclick=()=>{const q=$("#musicInput").value.trim();if(q)window.open(ytMusicSearchUrl(q),"_blank","noopener")};
 $("#musicInput").onkeydown=e=>{if(e.key==="Enter")$("#musicPlay").click()};
