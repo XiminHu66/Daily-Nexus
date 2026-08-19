@@ -383,7 +383,7 @@
     .music-controls p{font-size:11px;color:var(--muted);margin:0 0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .music-buttons{display:flex;align-items:center;gap:7px;margin-bottom:9px}
     .music-buttons button{width:34px;height:34px;border:1px solid var(--line);background:var(--panel);border-radius:50%;padding:0;font-size:14px}
-    .music-buttons .play{width:40px;height:40px;background:var(--text);color:var(--bg);font-size:15px}
+    .music-buttons .play{width:40px;height:40px;background:var(--text);color:var(--bg);font-size:15px}.music-buttons .play svg{width:15px;height:15px;display:block;margin:auto;fill:currentColor}
     .music-time{margin-left:auto;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
     .music-progress{width:100%;height:6px;border-radius:999px;background:color-mix(in srgb,var(--muted) 20%,transparent);appearance:none;cursor:pointer}
     .music-progress::-webkit-slider-thumb{appearance:none;width:12px;height:12px;border-radius:50%;background:var(--accent)}
@@ -641,7 +641,9 @@
               <p id="musicNowMeta">选择播放列表或艺人开始播放</p>
               <div class="music-buttons">
                 <button id="musicPrev" title="上一首">◀</button>
-                <button class="play" id="musicToggle" title="播放 / 暂停">▶</button>
+                <button class="play" id="musicToggle" title="播放 / 暂停" aria-label="播放">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </button>
                 <button id="musicNext" title="下一首">▶|</button>
                 <span class="music-time"><span id="musicCurrent">0:00</span> / <span id="musicDuration">0:00</span></span>
               </div>
@@ -2427,6 +2429,13 @@ function parseYTMedia(raw){
   return null;
 }
 function ytMusicSearchUrl(q){return`https://music.youtube.com/search?q=${encodeURIComponent(q)}`}
+function setMusicToggleIcon(isPlaying){
+  const btn=$("#musicToggle");if(!btn)return;
+  btn.innerHTML=isPlaying
+    ?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>'
+    :'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  btn.setAttribute("aria-label",isPlaying?"暂停":"播放");
+}
 function formatMusicTime(sec){
   sec=Math.max(0,Math.floor(Number(sec)||0));return`${Math.floor(sec/60)}:${String(sec%60).padStart(2,"0")}`;
 }
@@ -2553,7 +2562,7 @@ async function ensureMusicPlayer(){
       events:{
         onReady:()=>{musicPlayerReady=true;$("#musicPlayerEmpty").style.display="none";startMusicProgress();renderMusicQueue();resolve(p)},
         onStateChange:e=>{
-          $("#musicToggle").textContent=e.data===YT.PlayerState.PLAYING?"Ⅱ":"▶";
+          setMusicToggleIcon(e.data===YT.PlayerState.PLAYING);
           if(e.data===YT.PlayerState.PLAYING)startMusicProgress();
           if(e.data===YT.PlayerState.PLAYING||e.data===YT.PlayerState.CUED||e.data===YT.PlayerState.PAUSED){
             const ids=musicPlayer?.getPlaylist?.()||[];
