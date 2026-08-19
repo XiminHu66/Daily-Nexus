@@ -358,31 +358,6 @@
     }
     .embed-frame{display:block;width:100%;height:100%;border:0;background:transparent}
 
-    /* X · single official timeline */
-    .x-view,.music-view{height:100%;min-height:0;overflow:hidden}
-    .x-shell{height:100%;min-height:0;display:grid;grid-template-rows:auto 1fr;gap:10px}
-    .x-head{
-      display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid var(--line);
-      border-radius:var(--radius);background:color-mix(in srgb,var(--panel) 84%,transparent);box-shadow:var(--shadow)
-    }
-    .x-brand{display:flex;align-items:center;gap:9px;min-width:0}
-    .x-mark{width:35px;height:35px;border-radius:11px;display:grid;place-items:center;background:var(--text);color:var(--bg);font-weight:900;font-size:17px}
-    .x-brand b{font-size:15px}.x-brand span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
-    .x-actions{margin-left:auto;display:flex;align-items:center;gap:6px}
-    .x-actions button,.x-actions a{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:7px 10px;font-size:11px}
-    .x-auto{font-size:10px;color:var(--muted);white-space:nowrap}
-    .x-feed-wrap{
-      min-height:0;height:100%;overflow:auto;border:1px solid var(--line);border-radius:var(--radius);
-      background:color-mix(in srgb,var(--panel) 88%,transparent);box-shadow:var(--shadow);padding:0
-    }
-    .x-feed{width:min(820px,100%);min-height:100%;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);background:var(--panel)}
-    .x-feed-loading{padding:36px;text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
-    .x-config{display:none;position:absolute;inset:0;z-index:20;background:rgba(8,10,14,.42);backdrop-filter:blur(10px);place-items:center;padding:16px}
-    .x-config.open{display:grid}
-    .x-config-card{width:min(680px,96vw);padding:17px;border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:var(--shadow)}
-    .x-config-note{font-size:11px;color:var(--muted);line-height:1.65;margin:8px 0}
-    .x-config-card .field{width:100%}
-
     /* Music · compact YouTube player + Tsugi library */
     .music-shell{
       height:100%;min-height:0;border:1px solid var(--line);border-radius:var(--radius);
@@ -400,7 +375,7 @@
 
     .music-playerbar{
       border:1px solid var(--line);border-radius:18px;background:var(--panel2);
-      display:grid;grid-template-columns:minmax(300px,1fr) 220px;gap:12px;padding:12px;margin-bottom:18px;align-items:stretch
+      display:grid;grid-template-columns:minmax(420px,1fr) 220px;gap:12px;padding:12px;margin-bottom:18px;align-items:stretch
     }
     .music-controls{min-width:0;display:flex;flex-direction:column;justify-content:center;padding:5px 8px}
     .music-kicker{font-size:9px;letter-spacing:.13em;color:var(--muted);font-weight:850}
@@ -413,6 +388,29 @@
     .music-progress{width:100%;height:6px;border-radius:999px;background:color-mix(in srgb,var(--muted) 20%,transparent);appearance:none;cursor:pointer}
     .music-progress::-webkit-slider-thumb{appearance:none;width:12px;height:12px;border-radius:50%;background:var(--accent)}
     .music-progress::-moz-range-thumb{width:12px;height:12px;border:0;border-radius:50%;background:var(--accent)}
+    .music-queue-wrap{margin-top:13px;border-top:1px solid var(--line);padding-top:10px;min-height:0}
+    .music-queue-head{display:flex;align-items:center;gap:7px;margin-bottom:6px}
+    .music-queue-head b{font-size:12px}.music-queue-head span{font-size:9px;color:var(--muted)}
+    .music-queue-head button{margin-left:auto;border:0;background:transparent;color:var(--muted);font-size:9px;padding:3px}
+    .music-queue{
+      max-height:190px;overflow:auto;border:1px solid var(--line);border-radius:11px;
+      background:color-mix(in srgb,var(--panel) 58%,transparent);scrollbar-width:thin
+    }
+    .music-queue-row{
+      display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:7px;align-items:center;
+      min-height:38px;padding:5px 8px;border:0;border-bottom:1px solid var(--line);
+      background:transparent;color:var(--text);width:100%;text-align:left;cursor:pointer
+    }
+    .music-queue-row:last-child{border-bottom:0}
+    .music-queue-row:hover{background:var(--panel2)}
+    .music-queue-row.active{background:color-mix(in srgb,var(--accent) 12%,var(--panel2))}
+    .music-queue-row.active .mq-index{color:var(--accent);font-weight:800}
+    .mq-index{font-size:9px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+    .mq-copy{min-width:0}
+    .mq-title{display:block;font-size:10px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .mq-id{display:block;font-size:8px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .mq-play{font-size:10px;color:var(--muted)}
+    .music-queue-empty{padding:16px;text-align:center;color:var(--muted);font-size:10px;line-height:1.5}
     .music-video{
       width:220px;height:200px;min-width:220px;min-height:200px;border-radius:13px;overflow:hidden;background:#111;border:1px solid var(--line);position:relative
     }
@@ -489,7 +487,6 @@
     <button class="navbtn" data-view="board"><div><div class="navicon">▦</div><span>看板</span></div></button>
     <button class="navbtn" data-view="tsugi"><div><div class="navicon">📚</div><span>追更</span></div></button>
     <button class="navbtn" data-view="meal"><div><div class="navicon">🍜</div><span>吃什么</span></div></button>
-    <button class="navbtn" data-view="x"><div><div class="navicon">𝕏</div><span>Timeline</span></div></button>
     <button class="navbtn" data-view="music"><div><div class="navicon">♫</div><span>音乐</span></div></button>
     <button class="navbtn" data-view="focus"><div><div class="navicon">◎</div><span>专注</span></div></button>
     <button class="navbtn" data-view="tools"><div><div class="navicon">⌘</div><span>工具</span></div></button>
@@ -626,33 +623,6 @@
       </div>
     </section>
 
-    <section class="view x-view" id="view-x">
-      <div class="x-shell">
-        <div class="x-head">
-          <div class="x-brand"><span class="x-mark">𝕏</span><div><b>Timeline</b><span>单列公开 Timeline · 推荐使用公开 X List</span></div></div>
-          <div class="x-actions">
-            <span class="x-auto" id="xRefreshNote">自动 5 分钟</span>
-            <button id="refreshXTimeline">刷新</button>
-            <button id="openXConfig">来源</button>
-            <a id="openXSource" href="https://x.com/" target="_blank" rel="noopener">打开 X ↗</a>
-          </div>
-        </div>
-        <div class="x-feed-wrap">
-          <div class="x-feed" id="xFeed"><div class="x-feed-loading">首次打开时加载 X Timeline…</div></div>
-        </div>
-      </div>
-      <div class="x-config" id="xConfig">
-        <div class="x-config-card">
-          <div class="modaltop"><h3>X Timeline 来源</h3><button class="iconbtn" id="closeXConfig">×</button></div>
-          <label>Timeline URL</label>
-          <input class="field" id="xTimelineUrl" placeholder="推荐：https://x.com/i/lists/你的公开ListID">
-          <p class="x-config-note">想把多个账号混合成一条类似 Following 的时间流，推荐在 X 建一个<strong>公开 List</strong>并把这些账号加入其中，然后把 List URL 粘贴到这里。官方 Embed 不能在纯前端里把多个独立 Profile 自动合并成一条按时间排序的流。</p>
-          <p class="x-config-note">也可以填写单个公开账号 URL（例如 https://x.com/OpenAI），但那只会显示该账号。</p>
-          <div style="display:flex;gap:7px;margin-top:9px"><button class="save" id="saveXTimeline">保存并加载</button><button class="pillbtn" id="xUseDemo">使用 OpenAI 示例</button></div>
-        </div>
-      </div>
-    </section>
-
     <section class="view music-view" id="view-music">
       <div class="music-shell">
         <main class="music-main">
@@ -676,6 +646,16 @@
                 <span class="music-time"><span id="musicCurrent">0:00</span> / <span id="musicDuration">0:00</span></span>
               </div>
               <input class="music-progress" id="musicProgress" type="range" min="0" max="1000" value="0" aria-label="播放进度">
+              <div class="music-queue-wrap">
+                <div class="music-queue-head">
+                  <b>播放队列</b>
+                  <span id="musicQueueCount">单曲模式</span>
+                  <button id="musicQueueCurrent">定位当前歌曲</button>
+                </div>
+                <div class="music-queue" id="musicQueue">
+                  <div class="music-queue-empty">播放 Playlist 后，这里会显示完整歌单并可点击切歌。</div>
+                </div>
+              </div>
             </div>
             <div class="music-video" id="musicVideoBox">
               <div id="musicYTPlayer"></div>
@@ -2175,7 +2155,6 @@ const DEFAULT_NAV_CONFIG=[
   {view:"board",icon:"▦",label:"看板"},
   {view:"tsugi",icon:"📚",label:"追更"},
   {view:"meal",icon:"🍜",label:"吃什么"},
-  {view:"x",icon:"𝕏",label:"Timeline"},
   {view:"music",icon:"♫",label:"音乐"},
   {view:"focus",icon:"◎",label:"专注"},
   {view:"tools",icon:"⌘",label:"工具"},
@@ -2185,7 +2164,6 @@ const DEFAULT_NAV_CONFIG=[
 const state={
   profile:store.get("profile",{nickname:"Daily Nexus",logoText:"DN",logoImage:""}),
   navConfig:store.get("navConfig",DEFAULT_NAV_CONFIG),
-  xTimelineSource:store.get("xTimelineSource","https://x.com/OpenAI"),
   musicLibrary:store.get("musicLibrary",[]),
   theme:store.get("theme","auto"),
   city:store.get("city","Seattle"),
@@ -2228,7 +2206,6 @@ function applyTheme(){
     if(window.__deskboardInitialized__)$("#deskboardFrame")?.contentWindow?.postMessage({type:"nexus-theme",theme:t},"*");
   }catch(_){}
   syncEmbeddedThemes(t);
-  if(window.__xTimelineInitialized)renderXTimeline(true);
 }function cycleTheme(){state.theme=state.theme==="auto"?"dark":state.theme==="dark"?"light":"auto";store.set("theme",state.theme);applyTheme()}
 $("#themeBtn").onclick=cycleTheme;$("#quickTheme").onclick=cycleTheme;matchMedia("(prefers-color-scheme: light)").addEventListener?.("change",()=>{if(state.theme==="auto")applyTheme()});
 function applyBg(){
@@ -2428,131 +2405,13 @@ function switchNexusView(view){
   setDeskBoardActive(view==='board');
   if(view==='tsugi')ensureEmbeddedSite('tsugi');
   if(view==='meal')ensureEmbeddedSite('meal');
-  if(view==='x')ensureXTimeline();
   if(view==='music')ensureMusicTab();
   if(view==='focus')renderFocusTasks();
   if(view==='links')renderDeskLinks();
 }
 
-/* ---------- X · official oEmbed single timeline ---------- */
-let xWidgetPromise=null,xRefreshTimer=null;
-function validXTimelineUrl(raw){
-  const v=String(raw||"").trim();
-  try{
-    const u=new URL(v);
-    return /(^|\.)x\.com$/i.test(u.hostname)||/(^|\.)twitter\.com$/i.test(u.hostname)?v.replace("twitter.com","x.com"):"";
-  }catch{return""}
-}
-function loadXWidgetScript(){
-  if(window.twttr?.widgets)return Promise.resolve(window.twttr);
-  if(xWidgetPromise)return xWidgetPromise;
-  xWidgetPromise=new Promise((resolve,reject)=>{
-    let sc=document.getElementById("nexus-x-wjs");
-    if(!sc){
-      sc=document.createElement("script");
-      sc.id="nexus-x-wjs";sc.async=true;sc.src="https://platform.x.com/widgets.js";sc.charset="utf-8";
-      document.head.appendChild(sc);
-    }
-    const started=Date.now(),timer=setInterval(()=>{
-      if(window.twttr?.widgets){clearInterval(timer);resolve(window.twttr)}
-      else if(Date.now()-started>10000){clearInterval(timer);reject(new Error("widgets.js timeout"))}
-    },100);
-    sc.onerror=()=>{clearInterval(timer);reject(new Error("platform.x.com/widgets.js 被拦截"))};
-  });
-  return xWidgetPromise;
-}
-async function fetchXOEmbed(url){
-  const theme=document.documentElement.dataset.theme==="dark"?"dark":"light";
-  const endpoint=`https://publish.x.com/oembed?url=${encodeURIComponent(url)}&omit_script=1&theme=${theme}&dnt=true&chrome=${encodeURIComponent("noheader nofooter transparent")}&maxwidth=820&maxheight=1200&limit=20`;
-  const targets=[
-    endpoint,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(endpoint)}`
-  ];
-  let last;
-  for(const target of targets){
-    try{
-      const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),9000);
-      const r=await fetch(target,{signal:ctrl.signal});clearTimeout(tm);
-      if(!r.ok)throw new Error(`oEmbed HTTP ${r.status}`);
-      const data=await r.json();
-      if(data?.html)return data;
-      throw new Error("oEmbed 没有返回 Timeline markup");
-    }catch(e){last=e}
-  }
-  throw last||new Error("oEmbed unavailable");
-}
-async function renderXTimeline(force=false){
-  const host=$("#xFeed"),url=validXTimelineUrl(state.xTimelineSource),open=$("#openXSource"),note=$("#xRefreshNote");
-  if(!host)return;
-  if(open)open.href=url||"https://x.com/";
-  $("#xTimelineUrl").value=url||"";
-  if(!url){
-    host.innerHTML='<div class="x-feed-loading">还没有 Timeline 来源。点击「来源」粘贴公开 X Profile 或 List URL。</div>';return;
-  }
-  host.innerHTML='<div class="x-feed-loading">正在向 X Publish 请求 Timeline…</div>';
-  if(note)note.textContent="连接 X…";
-  try{
-    const data=await fetchXOEmbed(url);
-    // X oEmbed may change markup over time; use exactly the canonical HTML it returns,
-    // but strip script tags because we load widgets.js once ourselves.
-    const box=document.createElement("div");
-    box.innerHTML=String(data.html).replace(/<script[\s\S]*?<\/script>/gi,"");
-    const timeline=box.querySelector(".twitter-timeline");
-    if(timeline){
-      timeline.dataset.height="1200";
-      timeline.dataset.dnt="true";
-      timeline.dataset.theme=document.documentElement.dataset.theme==="dark"?"dark":"light";
-      timeline.dataset.chrome="noheader nofooter transparent";
-    }
-    host.innerHTML="";
-    while(box.firstChild)host.appendChild(box.firstChild);
-    const tw=await loadXWidgetScript();
-    tw.widgets.load(host);
-    const started=Date.now();
-    const detector=setInterval(()=>{
-      const iframe=host.querySelector("iframe");
-      if(iframe){
-        clearInterval(detector);
-        iframe.style.width="100%";
-        if(note)note.textContent="自动 5 分钟 · X oEmbed";
-      }else if(Date.now()-started>9000){
-        clearInterval(detector);
-        host.innerHTML=`<div class="x-feed-loading">
-          X 官方 oEmbed 已返回 markup，但 widgets.js 没有生成 Timeline iframe。<br><br>
-          这通常表示浏览器 / DNS / 扩展阻止了 X for Websites 资源。<br><br>
-          <a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a>
-        </div>`;
-        if(note)note.textContent="X widget 被阻止";
-      }
-    },250);
-  }catch(e){
-    host.innerHTML=`<div class="x-feed-loading">
-      无法读取 X 官方 oEmbed：${escapeHtml(e.message)}<br><br>
-      <a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a>
-    </div>`;
-    if(note)note.textContent="X oEmbed 失败";
-  }
-}
-function ensureXTimeline(){
-  window.__xTimelineInitialized=true;
-  renderXTimeline();
-  if(!xRefreshTimer)xRefreshTimer=setInterval(()=>{
-    if($("#view-x")?.classList.contains("active"))renderXTimeline(true);
-  },5*60*1000);
-}
-$("#openXConfig").onclick=()=>{$("#xTimelineUrl").value=state.xTimelineSource||"";$("#xConfig").classList.add("open")};
-$("#closeXConfig").onclick=()=>$("#xConfig").classList.remove("open");
-$("#xConfig").onclick=e=>{if(e.target===$("#xConfig"))$("#xConfig").classList.remove("open")};
-$("#saveXTimeline").onclick=()=>{
-  const url=validXTimelineUrl($("#xTimelineUrl").value);
-  if(!url){alert("请输入有效的 x.com 公开 Profile 或 List URL。");return}
-  state.xTimelineSource=url;store.set("xTimelineSource",url);$("#xConfig").classList.remove("open");renderXTimeline(true);
-};
-$("#xUseDemo").onclick=()=>$("#xTimelineUrl").value="https://x.com/OpenAI";
-$("#refreshXTimeline").onclick=()=>renderXTimeline(true);
-
 /* ---------- Music ---------- */
-let musicSyncBusy=false,musicPlayer=null,musicPlayerReady=false,musicProgressTimer=null,currentBindArtist="";
+let musicSyncBusy=false,musicPlayer=null,musicPlayerReady=false,musicProgressTimer=null,currentBindArtist="",musicQueueObserver=null,musicQueueIds=[],musicMetaCache=store.get("musicMetaCache",{});
 function parseYTMedia(raw){
   const text=String(raw||"").trim();if(!text)return null;
   try{
@@ -2570,6 +2429,101 @@ function parseYTMedia(raw){
 function ytMusicSearchUrl(q){return`https://music.youtube.com/search?q=${encodeURIComponent(q)}`}
 function formatMusicTime(sec){
   sec=Math.max(0,Math.floor(Number(sec)||0));return`${Math.floor(sec/60)}:${String(sec%60).padStart(2,"0")}`;
+}
+async function fetchMusicVideoMeta(id){
+  if(!id)return null;
+  if(musicMetaCache[id])return musicMetaCache[id];
+  const endpoint=`https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${id}`)}&format=json`;
+  const targets=[endpoint,`https://api.allorigins.win/raw?url=${encodeURIComponent(endpoint)}`];
+  for(const target of targets){
+    try{
+      const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),6500);
+      const r=await fetch(target,{signal:ctrl.signal});clearTimeout(tm);
+      if(!r.ok)throw new Error("metadata HTTP "+r.status);
+      const j=await r.json();
+      if(j?.title){
+        musicMetaCache[id]={title:j.title,author:j.author_name||"",thumb:j.thumbnail_url||""};
+        store.set("musicMetaCache",musicMetaCache);
+        return musicMetaCache[id];
+      }
+    }catch(_){}
+  }
+  return null;
+}
+function updateQueueCurrentTitle(){
+  if(!musicPlayerReady||!musicPlayer)return;
+  try{
+    const index=musicPlayer.getPlaylistIndex?.()??-1,data=musicPlayer.getVideoData?.();
+    if(index>=0&&data?.title){
+      const row=$(`[data-music-queue-index="${index}"]`);
+      if(row){
+        const title=row.querySelector(".mq-title"),sub=row.querySelector(".mq-id");
+        if(title)title.textContent=data.title;
+        if(sub&&data.author)sub.textContent=data.author;
+      }
+      const id=musicQueueIds[index];
+      if(id&&!musicMetaCache[id]){
+        musicMetaCache[id]={title:data.title,author:data.author||"",thumb:""};
+        store.set("musicMetaCache",musicMetaCache);
+      }
+    }
+  }catch(_){}
+}
+function highlightMusicQueue(){
+  const index=musicPlayerReady&&musicPlayer?.getPlaylistIndex?musicPlayer.getPlaylistIndex():-1;
+  $$("[data-music-queue-index]").forEach(row=>row.classList.toggle("active",+row.dataset.musicQueueIndex===index));
+  updateQueueCurrentTitle();
+}
+function observeMusicQueueRows(){
+  musicQueueObserver?.disconnect();
+  const host=$("#musicQueue");if(!host||!("IntersectionObserver" in window))return;
+  musicQueueObserver=new IntersectionObserver(entries=>{
+    entries.forEach(async entry=>{
+      if(!entry.isIntersecting)return;
+      const row=entry.target,id=row.dataset.videoId;
+      musicQueueObserver.unobserve(row);
+      const cached=musicMetaCache[id];
+      const meta=cached||await fetchMusicVideoMeta(id);
+      if(!meta)return;
+      const title=row.querySelector(".mq-title"),sub=row.querySelector(".mq-id");
+      if(title)title.textContent=meta.title;
+      if(sub)sub.textContent=meta.author||id;
+    });
+  },{root:host,rootMargin:"100px 0px"});
+  $$("[data-video-id]",host).forEach(row=>musicQueueObserver.observe(row));
+}
+function renderMusicQueue(){
+  const host=$("#musicQueue"),count=$("#musicQueueCount");if(!host)return;
+  let ids=[];
+  try{ids=musicPlayerReady&&musicPlayer?.getPlaylist?musicPlayer.getPlaylist()||[]:[]}catch(_){}
+  musicQueueIds=Array.isArray(ids)?ids:[];
+  if(!musicQueueIds.length){
+    if(count)count.textContent="单曲模式";
+    host.innerHTML='<div class="music-queue-empty">当前不是 Playlist。播放歌单后会在这里显示全部歌曲。</div>';
+    musicQueueObserver?.disconnect();
+    return;
+  }
+  if(count)count.textContent=`${musicQueueIds.length} 首`;
+  const current=musicPlayer.getPlaylistIndex?.()??-1;
+  host.innerHTML=musicQueueIds.map((id,i)=>{
+    const meta=musicMetaCache[id];
+    return `<button class="music-queue-row ${i===current?"active":""}" data-music-queue-index="${i}" data-video-id="${escapeAttr(id)}">
+      <span class="mq-index">${i+1}</span>
+      <span class="mq-copy"><span class="mq-title">${escapeHtml(meta?.title||`Track ${i+1}`)}</span><span class="mq-id">${escapeHtml(meta?.author||id)}</span></span>
+      <span class="mq-play">${i===current?"▶":"›"}</span>
+    </button>`;
+  }).join("");
+  $$("[data-music-queue-index]",host).forEach(row=>row.onclick=()=>{
+    if(!musicPlayerReady||!musicPlayer)return;
+    musicPlayer.playVideoAt(+row.dataset.musicQueueIndex);
+  });
+  observeMusicQueueRows();
+  updateQueueCurrentTitle();
+}
+function scrollToCurrentMusicQueue(){
+  const index=musicPlayerReady&&musicPlayer?.getPlaylistIndex?musicPlayer.getPlaylistIndex():-1;
+  const row=index>=0?$(`[data-music-queue-index="${index}"]`):null;
+  row?.scrollIntoView({behavior:"smooth",block:"center"});
 }
 function loadYTApi(){
   if(window.YT?.Player)return Promise.resolve();
@@ -2597,10 +2551,15 @@ async function ensureMusicPlayer(){
       width:220,height:200,
       playerVars:{playsinline:1,origin:location.origin,rel:0},
       events:{
-        onReady:()=>{musicPlayerReady=true;$("#musicPlayerEmpty").style.display="none";startMusicProgress();resolve(p)},
+        onReady:()=>{musicPlayerReady=true;$("#musicPlayerEmpty").style.display="none";startMusicProgress();renderMusicQueue();resolve(p)},
         onStateChange:e=>{
           $("#musicToggle").textContent=e.data===YT.PlayerState.PLAYING?"Ⅱ":"▶";
           if(e.data===YT.PlayerState.PLAYING)startMusicProgress();
+          if(e.data===YT.PlayerState.PLAYING||e.data===YT.PlayerState.CUED||e.data===YT.PlayerState.PAUSED){
+            const ids=musicPlayer?.getPlaylist?.()||[];
+            if(ids.length!==musicQueueIds.length||ids.some((id,i)=>id!==musicQueueIds[i]))renderMusicQueue();
+            else highlightMusicQueue();
+          }
         },
         onError:e=>{
           $("#musicNowMeta").textContent=`YouTube 播放错误 ${e.data}`;
@@ -2620,6 +2579,7 @@ function startMusicProgress(){
       if(dur>0)$("#musicProgress").value=Math.round(cur/dur*1000);
       const data=musicPlayer.getVideoData?.();
       if(data?.title&&$("#musicNowTitle").textContent!==data.title)$("#musicNowTitle").textContent=data.title;
+      highlightMusicQueue();
     }catch(_){}
   },500);
 }
@@ -2630,7 +2590,12 @@ async function playMusicMedia(raw,title=""){
   $("#musicNowMeta").textContent=parsed.type==="playlist"?"YouTube Playlist":"YouTube";
   if(parsed.type==="playlist"){
     p.loadPlaylist({list:parsed.id,listType:"playlist",index:0,startSeconds:0});
-  }else p.loadVideoById(parsed.id);
+    setTimeout(renderMusicQueue,900);
+    setTimeout(renderMusicQueue,2200);
+  }else{
+    p.loadVideoById(parsed.id);
+    setTimeout(renderMusicQueue,500);
+  }
   return true;
 }
 $("#musicToggle").onclick=async()=>{
@@ -2639,6 +2604,7 @@ $("#musicToggle").onclick=async()=>{
 };
 $("#musicPrev").onclick=async()=>{const p=await ensureMusicPlayer();p?.previousVideo?.()};
 $("#musicNext").onclick=async()=>{const p=await ensureMusicPlayer();p?.nextVideo?.()};
+$("#musicQueueCurrent").onclick=scrollToCurrentMusicQueue;
 $("#musicProgress").oninput=e=>{
   if(!musicPlayerReady||!musicPlayer)return;
   const dur=musicPlayer.getDuration()||0;if(dur)musicPlayer.seekTo(dur*(+e.target.value/1000),true);
