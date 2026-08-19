@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f1115" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Daily Nexus</title>
   <style>
     :root{
@@ -287,6 +288,15 @@
     .focus-main{display:flex;flex-direction:column;min-height:100%}.focus-target{display:flex;gap:8px}.focus-target input{flex:1}.focusclock{font-size:78px;font-weight:900;letter-spacing:-5px;text-align:center;margin:24px 0 12px}.focusactions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.focusactions button{padding:9px 14px}.preset-row{display:flex;justify-content:center;gap:7px;margin-top:10px}.preset-row button{border:0;background:transparent;color:var(--muted);font-size:11px;padding:5px 7px}.preset-row button:hover{color:var(--text)}.focus-progress{height:5px;border-radius:99px;background:color-mix(in srgb,var(--panel2) 90%,transparent);overflow:hidden;margin:18px 0}.focus-progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0}.focus-stats{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.focus-stat{border:1px solid var(--line);border-radius:14px;padding:10px;background:var(--panel2)}.focus-stat span{font-size:10px;color:var(--muted);display:block}.focus-stat b{font-size:18px}
     .focus-desk label{font-size:10px;color:var(--muted);display:block;margin:9px 0 5px}.focus-desk textarea{height:90px;border:1px solid var(--line);border-radius:13px;padding:10px;background:var(--panel2)}.noise-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px}.noise-row button{border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:10px 8px;font-size:13px}.noise-row button.active{outline:1px solid var(--accent)}.session-log{margin-top:12px}.session-item{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding:7px 0;font-size:10px}.session-item b{max-width:55%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.session-item span{color:var(--muted);margin-left:auto}
     .tools-layout{height:100%;display:grid;grid-template-columns:1.03fr .97fr;gap:12px}.questbox{display:flex;flex-direction:column}.quest-card{border:1px solid var(--line);border-radius:18px;padding:18px;background:color-mix(in srgb,var(--panel2) 58%,transparent);min-height:230px;display:flex;flex-direction:column;justify-content:center}.quest-card h3{font-size:26px;margin:10px 0 8px;letter-spacing:-.7px}.quest-card p{font-size:13px;color:var(--muted);line-height:1.55}.quest-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tag{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:5px 8px;color:var(--muted)}.category-row{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.category-row button{border:1px solid var(--line);border-radius:999px;padding:6px 9px;background:var(--panel2);font-size:10px;color:var(--muted)}.category-row button.active{color:var(--text);background:color-mix(in srgb,var(--accent) 14%,var(--panel2))}.quest-actions{display:flex;gap:8px;margin-top:auto}.quest-actions button{padding:10px 13px}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.toolbox{border:1px solid var(--line);border-radius:16px;padding:13px;background:var(--panel2);min-height:130px}.toolbox h3{font-size:13px;margin:0 0 5px}.toolbox p{font-size:10px;color:var(--muted);margin:0 0 10px}.tool-output{font-size:18px;font-weight:800;min-height:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tool-actions{display:flex;gap:6px;margin-top:8px}.tool-actions button{border:1px solid var(--line);background:var(--panel);border-radius:9px;padding:6px 8px;font-size:10px}.range-row{display:grid;grid-template-columns:1fr 1fr;gap:6px}.range-row input{width:100%}
+    
+    .nav-editor-list{display:grid;gap:7px;margin:9px 0}
+    .nav-editor-row{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:7px;align-items:center;border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:7px}
+    .nav-editor-row .nav-edit-icon{text-align:center;font-size:16px;padding-left:4px;padding-right:4px}
+    .nav-editor-actions{display:flex;gap:4px}
+    .nav-editor-actions button{width:31px;height:31px;border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:0;font-size:13px}
+    .nav-editor-hint{display:flex;align-items:center;gap:6px;margin-top:7px;color:var(--muted);font-size:11px}
+    @media(max-width:740px){.nav-editor-row{grid-template-columns:52px minmax(0,1fr) auto}.nav-editor-actions{flex-direction:column}.nav-editor-actions button{width:29px;height:25px}}
+
     .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formbox{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--panel2)}label{font-size:11px;color:var(--muted);display:block;margin-bottom:6px}.field{width:100%;border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:10px;outline:none}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.full{grid-column:1/-1}.save{border:0;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:700}.hint{font-size:11px;color:var(--muted);line-height:1.55}.bg-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sliderrow{display:grid;grid-template-columns:64px 1fr 34px;gap:7px;align-items:center;margin:8px 0}.sliderrow span{font-size:10px;color:var(--muted)}.sliderrow output{text-align:right;font-size:10px;color:var(--muted)}input[type="range"]{width:100%}.bgpreview{height:90px;border:1px solid var(--line);border-radius:13px;background:var(--panel);background-size:cover;background-position:center;margin:8px 0}
 
     .calendar-modal-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}
@@ -341,6 +351,92 @@
     #view-board{height:100%;min-height:0}
     .board-frame-wrap{height:100%;min-height:0;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:transparent}
     .board-frame{display:block;width:100%;height:100%;border:0;background:transparent}
+    .embed-frame-wrap{
+      height:100%;min-height:0;position:relative;border-radius:var(--radius);
+      overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);
+      background:color-mix(in srgb,var(--panel) 62%,transparent)
+    }
+    .embed-frame{display:block;width:100%;height:100%;border:0;background:transparent}
+
+    /* X · single official timeline */
+    .x-view,.music-view{height:100%;min-height:0;overflow:hidden}
+    .x-shell{height:100%;min-height:0;display:grid;grid-template-rows:auto 1fr;gap:10px}
+    .x-head{
+      display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid var(--line);
+      border-radius:var(--radius);background:color-mix(in srgb,var(--panel) 84%,transparent);box-shadow:var(--shadow)
+    }
+    .x-brand{display:flex;align-items:center;gap:9px;min-width:0}
+    .x-mark{width:35px;height:35px;border-radius:11px;display:grid;place-items:center;background:var(--text);color:var(--bg);font-weight:900;font-size:17px}
+    .x-brand b{font-size:15px}.x-brand span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+    .x-actions{margin-left:auto;display:flex;align-items:center;gap:6px}
+    .x-actions button,.x-actions a{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:7px 10px;font-size:11px}
+    .x-auto{font-size:10px;color:var(--muted);white-space:nowrap}
+    .x-feed-wrap{
+      min-height:0;height:100%;overflow:auto;border:1px solid var(--line);border-radius:var(--radius);
+      background:color-mix(in srgb,var(--panel) 88%,transparent);box-shadow:var(--shadow);padding:0
+    }
+    .x-feed{width:min(760px,100%);min-height:100%;margin:0 auto;border-left:1px solid var(--line);border-right:1px solid var(--line);background:var(--panel)}
+    .x-feed-loading{padding:36px;text-align:center;color:var(--muted);font-size:12px;line-height:1.7}
+    .x-config{display:none;position:absolute;inset:0;z-index:20;background:rgba(8,10,14,.42);backdrop-filter:blur(10px);place-items:center;padding:16px}
+    .x-config.open{display:grid}
+    .x-config-card{width:min(680px,96vw);padding:17px;border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:var(--shadow)}
+    .x-config-note{font-size:11px;color:var(--muted);line-height:1.65;margin:8px 0}
+    .x-config-card .field{width:100%}
+
+    /* Music · YouTube Music-inspired, no dead inner nav */
+    .music-shell{
+      height:100%;min-height:0;border:1px solid var(--line);border-radius:var(--radius);
+      background:color-mix(in srgb,var(--panel) 80%,transparent);box-shadow:var(--shadow);overflow:hidden
+    }
+    .music-main{height:100%;min-height:0;overflow:auto;padding:14px 16px 24px}
+    .music-top{
+      position:sticky;top:-14px;z-index:5;display:flex;align-items:center;gap:7px;padding:10px 0 12px;
+      background:linear-gradient(to bottom,color-mix(in srgb,var(--panel) 98%,transparent) 75%,transparent)
+    }
+    .music-brand{display:flex;align-items:center;gap:8px;margin-right:8px;white-space:nowrap;font-weight:850}
+    .music-brand i{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#ff0033;color:white;font-style:normal;font-size:13px}
+    .music-search{flex:1;min-width:170px;border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:10px 14px}
+    .music-top button,.music-top a{border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:9px 12px;font-size:11px}
+    .music-hero{display:grid;grid-template-columns:minmax(280px,.86fr) minmax(420px,1.14fr);gap:14px;margin-bottom:18px}
+    .music-now{
+      min-height:248px;border-radius:21px;border:1px solid var(--line);padding:19px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
+      background:radial-gradient(circle at 78% 17%,color-mix(in srgb,var(--accent2) 54%,transparent),transparent 43%),
+                 radial-gradient(circle at 10% 90%,color-mix(in srgb,var(--accent) 44%,transparent),transparent 46%),var(--panel2)
+    }
+    .music-kicker{font-size:10px;letter-spacing:.13em;color:var(--muted);font-weight:850}
+    .music-now h2{font-size:30px;line-height:1.04;letter-spacing:-.04em;margin:8px 0 6px}
+    .music-now p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}
+    .music-player{min-height:248px;border:1px solid var(--line);border-radius:21px;overflow:hidden;background:#151515;position:relative}
+    .music-player iframe{display:block;width:100%;height:100%;min-height:248px;border:0}
+    .music-player-empty{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:26px;color:#c5cad3;background:linear-gradient(145deg,#13161e,#272d3b);font-size:12px;line-height:1.65}
+    .music-section{margin-top:20px}
+    .music-section-head{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+    .music-section-head h3{font-size:18px;margin:0}.music-section-head span{font-size:10px;color:var(--muted)}
+    .music-section-head button{margin-left:auto;border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:6px 9px;font-size:10px}
+    .music-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:9px}
+    .music-card{min-width:0;border:1px solid var(--line);background:var(--panel2);border-radius:15px;padding:11px}
+    .music-cover{aspect-ratio:1;border-radius:12px;display:grid;place-items:center;font-size:34px;margin-bottom:9px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 20%,var(--panel)),color-mix(in srgb,var(--accent2) 22%,var(--panel2)))}
+    .music-card b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .music-card small{display:block;font-size:10px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .music-card-actions{display:flex;gap:5px;margin-top:9px}.music-card-actions button,.music-card-actions a{flex:1;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px;font-size:9px;text-align:center}
+    .music-artists{display:flex;gap:10px;overflow:auto;padding:2px 0 4px}
+    .music-artist{flex:0 0 94px;text-align:center}
+    .music-avatar{width:66px;height:66px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;border:1px solid var(--line);background:linear-gradient(145deg,color-mix(in srgb,var(--accent2) 24%,var(--panel)),var(--panel2));font-size:21px}
+    .music-artist b{display:block;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .music-sync-note{font-size:11px;color:var(--muted);line-height:1.55;padding:9px 11px;border:1px dashed var(--line);border-radius:11px;margin-bottom:10px}
+    .music-library-add{display:grid;grid-template-columns:1fr 1.6fr auto;gap:7px;margin-top:9px}.music-library-add input{min-width:0}
+    @media(max-width:1000px){.music-hero{grid-template-columns:1fr}.x-feed{width:min(720px,100%)}}
+    @media(max-width:740px){.music-main{padding:10px}.music-top{top:-10px;flex-wrap:wrap}.music-brand{width:100%}.music-search{flex:1 1 100%}.music-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.music-library-add{grid-template-columns:1fr}.music-player,.music-player iframe{min-height:220px}}
+
+    .embed-loading{
+      position:absolute;inset:0;z-index:2;display:grid;place-items:center;
+      background:color-mix(in srgb,var(--panel) 94%,transparent);
+      transition:opacity .2s ease
+    }
+    .embed-loading.hide{opacity:0;pointer-events:none}
+    .embed-loading>div{text-align:center;display:grid;gap:5px}
+    .embed-loading b{font-size:15px}.embed-loading span{font-size:11px;color:var(--muted)}
+
     .board-loading{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:var(--bg);color:var(--muted);transition:opacity .18s ease}.board-loading>div{text-align:center}.board-loading b{display:block;color:var(--text);font-size:16px;margin-bottom:6px}.board-loading span{font-size:11px}.board-loading.hide{opacity:0;pointer-events:none}
     .links-page{height:100%;display:flex;flex-direction:column;overflow:hidden}
     .links-page>.section-title{flex:0 0 auto}
@@ -367,7 +463,7 @@
     .link-edit-row button{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:9px}
     .add-link-row{display:grid;grid-template-columns:64px 1fr 1.8fr auto;gap:7px;align-items:end}
 
-    @media(max-width:740px){html,body{overflow:hidden}.app{grid-template-columns:1fr;grid-template-rows:1fr 68px;padding:8px;gap:8px}.sidebar{grid-row:2;border-radius:21px;flex-direction:row;justify-content:space-around;padding:6px;order:2}.logo,.spacer,.sidebar .themeSide{display:none}.navbtn{width:auto;flex:1;height:54px}.navicon{font-size:18px}.navbtn span{font-size:10px}.shell{grid-row:1;min-height:0}.topbar{min-height:92px;padding:7px 9px;grid-template-columns:118px 1fr 76px;gap:7px}.header-actions{gap:4px}.header-clock{padding:0 8px}.header-clock-photo{display:none}.header-clock .time{font-size:32px;letter-spacing:-1.6px}.header-clock .date{font-size:9px;margin-top:5px}.header-clock .greet{display:none}.header-weather{display:block;padding:0}.hw-current{padding:0 5px;gap:8px;height:100%}.hw-icon{font-size:27px}.hw-temp{font-size:29px;letter-spacing:-1.2px}.hw-place{font-size:10px;max-width:90px}.hw-desc{font-size:9px}.hw-metrics,.header-forecast{display:none}.header-actions .iconbtn{width:36px;height:36px}.calendar-quick{display:inline-grid}.calendar-modal-layout{grid-template-columns:1fr}.calendar-panel,.day-checklist{min-height:0}.calendar-grid button{min-height:36px}.dashboard{display:block;overflow:auto;padding-bottom:4px}.card{margin-bottom:9px;min-height:230px}.homecalendar{min-height:380px}.home-cal-body{grid-template-columns:1fr}.home-cal-month{padding-right:0;border-right:0}.home-today-panel{border-top:1px solid var(--line);padding-top:9px;margin-top:4px;min-height:130px}.home-calendar-grid button{height:34px}.wheelcard{min-height:310px}#wheel{width:min(300px,100%);max-height:285px}.event-list{grid-template-columns:repeat(3,minmax(115px,1fr));overflow:auto}.discover{min-height:390px}.workspace,.tools-layout{display:block;overflow:auto}.bigcard{margin-bottom:9px}.settings-grid{grid-template-columns:1fr}.focusclock{font-size:60px}.tool-grid{grid-template-columns:1fr 1fr}.event-row{grid-template-columns:1fr}.discover-grid{height:360px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}.board-frame-wrap{border-radius:18px}.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nexus-link{grid-template-columns:34px 1fr;min-height:82px;padding:10px}.nexus-link .li{width:34px;height:34px}.nexus-link .go{display:none}.link-edit-row,.add-link-row{grid-template-columns:54px 1fr}.link-edit-row input:nth-child(3),.add-link-row input:nth-child(3){grid-column:1/-1}.link-edit-row button,.add-link-row button{grid-column:1/-1}.links-actions{gap:4px}.links-actions a,.links-actions button{padding:6px 8px}}
+    @media(max-width:740px){html,body{overflow:hidden}.app{grid-template-columns:1fr;grid-template-rows:1fr 68px;padding:8px;gap:8px}.sidebar{grid-row:2;border-radius:21px;flex-direction:row;justify-content:flex-start;padding:6px;order:2;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.sidebar::-webkit-scrollbar{display:none}.logo,.spacer,.sidebar .themeSide{display:none}.navbtn{width:52px;min-width:52px;flex:0 0 52px;height:54px}.navicon{font-size:18px}.navbtn span{font-size:10px}.shell{grid-row:1;min-height:0}.topbar{min-height:92px;padding:7px 9px;grid-template-columns:118px 1fr 76px;gap:7px}.header-actions{gap:4px}.header-clock{padding:0 8px}.header-clock-photo{display:none}.header-clock .time{font-size:32px;letter-spacing:-1.6px}.header-clock .date{font-size:9px;margin-top:5px}.header-clock .greet{display:none}.header-weather{display:block;padding:0}.hw-current{padding:0 5px;gap:8px;height:100%}.hw-icon{font-size:27px}.hw-temp{font-size:29px;letter-spacing:-1.2px}.hw-place{font-size:10px;max-width:90px}.hw-desc{font-size:9px}.hw-metrics,.header-forecast{display:none}.header-actions .iconbtn{width:36px;height:36px}.calendar-quick{display:inline-grid}.calendar-modal-layout{grid-template-columns:1fr}.calendar-panel,.day-checklist{min-height:0}.calendar-grid button{min-height:36px}.dashboard{display:block;overflow:auto;padding-bottom:4px}.card{margin-bottom:9px;min-height:230px}.homecalendar{min-height:380px}.home-cal-body{grid-template-columns:1fr}.home-cal-month{padding-right:0;border-right:0}.home-today-panel{border-top:1px solid var(--line);padding-top:9px;margin-top:4px;min-height:130px}.home-calendar-grid button{height:34px}.wheelcard{min-height:310px}#wheel{width:min(300px,100%);max-height:285px}.event-list{grid-template-columns:repeat(3,minmax(115px,1fr));overflow:auto}.discover{min-height:390px}.workspace,.tools-layout{display:block;overflow:auto}.bigcard{margin-bottom:9px}.settings-grid{grid-template-columns:1fr}.focusclock{font-size:60px}.tool-grid{grid-template-columns:1fr 1fr}.event-row{grid-template-columns:1fr}.discover-grid{height:360px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}.board-frame-wrap{border-radius:18px}.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nexus-link{grid-template-columns:34px 1fr;min-height:82px;padding:10px}.nexus-link .li{width:34px;height:34px}.nexus-link .go{display:none}.link-edit-row,.add-link-row{grid-template-columns:54px 1fr}.link-edit-row input:nth-child(3),.add-link-row input:nth-child(3){grid-column:1/-1}.link-edit-row button,.add-link-row button{grid-column:1/-1}.links-actions{gap:4px}.links-actions a,.links-actions button{padding:6px 8px}}
   </style>
 </head>
 <body>
@@ -377,6 +473,10 @@
     <div class="logo" id="appLogo">DN</div>
     <button class="navbtn active" data-view="home"><div><div class="navicon">⌂</div><span>今日</span></div></button>
     <button class="navbtn" data-view="board"><div><div class="navicon">▦</div><span>看板</span></div></button>
+    <button class="navbtn" data-view="tsugi"><div><div class="navicon">📚</div><span>追更</span></div></button>
+    <button class="navbtn" data-view="meal"><div><div class="navicon">🍜</div><span>吃什么</span></div></button>
+    <button class="navbtn" data-view="x"><div><div class="navicon">𝕏</div><span>Timeline</span></div></button>
+    <button class="navbtn" data-view="music"><div><div class="navicon">♫</div><span>音乐</span></div></button>
     <button class="navbtn" data-view="focus"><div><div class="navicon">◎</div><span>专注</span></div></button>
     <button class="navbtn" data-view="tools"><div><div class="navicon">⌘</div><span>工具</span></div></button>
     <button class="navbtn" data-view="links"><div><div class="navicon">↗</div><span>链接</span></div></button>
@@ -482,6 +582,110 @@
       </div>
     </section>
 
+    <section class="view" id="view-tsugi">
+      <div class="embed-frame-wrap">
+        <div class="embed-loading" id="tsugiLoading">
+          <div><b>追更</b><span>正在加载 Tsugi Checker…</span></div>
+        </div>
+        <iframe
+          class="embed-frame"
+          id="tsugiFrame"
+          title="Tsugi Checker"
+          loading="lazy"
+          data-src="https://ximinhu66.github.io/tsugi-checker/"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </section>
+
+    <section class="view" id="view-meal">
+      <div class="embed-frame-wrap">
+        <div class="embed-loading" id="mealLoading">
+          <div><b>吃什么</b><span>正在加载 Meal Orbit…</span></div>
+        </div>
+        <iframe
+          class="embed-frame"
+          id="mealFrame"
+          title="Meal Orbit"
+          loading="lazy"
+          data-src="https://ximinhu66.github.io/meal-orbit/"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </section>
+
+    <section class="view x-view" id="view-x">
+      <div class="x-shell">
+        <div class="x-head">
+          <div class="x-brand"><span class="x-mark">𝕏</span><div><b>Timeline</b><span>单列公开 Timeline · 推荐使用公开 X List</span></div></div>
+          <div class="x-actions">
+            <span class="x-auto" id="xRefreshNote">自动 5 分钟</span>
+            <button id="refreshXTimeline">刷新</button>
+            <button id="openXConfig">来源</button>
+            <a id="openXSource" href="https://x.com/" target="_blank" rel="noopener">打开 X ↗</a>
+          </div>
+        </div>
+        <div class="x-feed-wrap">
+          <div class="x-feed" id="xFeed"><div class="x-feed-loading">首次打开时加载 X Timeline…</div></div>
+        </div>
+      </div>
+      <div class="x-config" id="xConfig">
+        <div class="x-config-card">
+          <div class="modaltop"><h3>X Timeline 来源</h3><button class="iconbtn" id="closeXConfig">×</button></div>
+          <label>Timeline URL</label>
+          <input class="field" id="xTimelineUrl" placeholder="推荐：https://x.com/i/lists/你的公开ListID">
+          <p class="x-config-note">想把多个账号混合成一条类似 Following 的时间流，推荐在 X 建一个<strong>公开 List</strong>并把这些账号加入其中，然后把 List URL 粘贴到这里。官方 Embed 不能在纯前端里把多个独立 Profile 自动合并成一条按时间排序的流。</p>
+          <p class="x-config-note">也可以填写单个公开账号 URL（例如 https://x.com/OpenAI），但那只会显示该账号。</p>
+          <div style="display:flex;gap:7px;margin-top:9px"><button class="save" id="saveXTimeline">保存并加载</button><button class="pillbtn" id="xUseDemo">使用 OpenAI 示例</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view music-view" id="view-music">
+      <div class="music-shell">
+        <main class="music-main">
+          <div class="music-top">
+            <div class="music-brand"><i>▶</i><span>Daily Nexus Music</span></div>
+            <input class="music-search" id="musicInput" placeholder="搜索音乐，或粘贴 YouTube / YouTube Music 视频、Playlist URL">
+            <button id="musicPlay">播放</button>
+            <button id="musicSearch">搜索 YT Music ↗</button>
+            <a href="https://music.youtube.com/" target="_blank" rel="noopener">打开 YT Music ↗</a>
+          </div>
+
+          <div class="music-hero">
+            <div class="music-now">
+              <div class="music-kicker">NOW PLAYING</div>
+              <h2 id="musicNowTitle">Daily Nexus Music</h2>
+              <p id="musicNowMeta">使用官方 YouTube Embed 播放公开视频与公开播放列表。</p>
+            </div>
+            <div class="music-player">
+              <div class="music-player-empty" id="musicPlayerEmpty"><div>♫<br><br>粘贴 YouTube / YouTube Music 视频或公开 Playlist URL<br><span id="musicPlayerHint">部署到 HTTPS 后播放最稳定</span></div></div>
+              <iframe id="musicPlayerFrame" title="YouTube Player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+
+          <section class="music-section">
+            <div class="music-section-head"><h3>关注艺人 · 最近新曲</h3><span id="musicSyncStatus">自动读取 Tsugi</span><button id="refreshMusic">重新同步</button></div>
+            <div class="music-sync-note">艺人关注列表只由 <b>Tsugi</b> 管理。Daily Nexus 不再维护第二份关注名单；修改后回到这里会自动重新读取。</div>
+            <div class="music-cards" id="musicReleaseCards"></div>
+          </section>
+
+          <section class="music-section">
+            <div class="music-section-head"><h3>关注艺人</h3><span>tsugi-followed-artists-v1</span><button id="manageArtistsInTsugi">在追更管理</button></div>
+            <div class="music-artists" id="musicArtistRow"></div>
+          </section>
+
+          <section class="music-section">
+            <div class="music-section-head"><h3>你的播放列表</h3><span>本地只保存 URL</span></div>
+            <div class="music-cards" id="musicLibraryCards"></div>
+            <div class="music-library-add">
+              <input class="field" id="musicPlaylistName" placeholder="播放列表名称">
+              <input class="field" id="musicPlaylistUrl" placeholder="YouTube / YouTube Music Playlist URL">
+              <button class="save" id="addMusicPlaylist">＋ 添加</button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </section>
+
     <section class="view" id="view-focus"><div class="workspace">
       <article class="bigcard glass focus-main">
         <div class="section-title"><h2>专注时钟</h2><p id="focusModeLabel">25 分钟工作</p></div>
@@ -566,6 +770,13 @@
           <button class="save" id="saveProfile">保存个人标识</button>
           <button class="pillbtn" id="clearLogoImage">移除图标图片</button>
           <p class="hint">昵称会替换“下午好 · Daily Nexus”中的 Daily Nexus；上传图片后左上角优先显示图片，否则显示你设置的文字或 Emoji。</p>
+        </div>
+        <div class="formbox full">
+          <h3 style="margin-top:0;font-size:14px">左侧导航</h3>
+          <p class="hint" style="margin-top:-2px">可以修改每个 Tab 的图标与名称，并用 ↑ ↓ 调整顺序。图标支持 Emoji、单个字符或简单符号。</p>
+          <div class="nav-editor-list" id="navEditorList"></div>
+          <button class="save" id="saveNavConfig">保存导航设置</button>
+          <button class="pillbtn" id="resetNavConfig">恢复默认顺序</button>
         </div>
         <div class="formbox">
           <h3 style="margin-top:0;font-size:14px">全局天气 / AQI</h3>
@@ -662,15 +873,12 @@
     <div class="upcoming-addbox">
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
         <b>关注艺人</b>
-        <span class="hint" id="upcomingArtistSyncState" style="margin:0">正在同步 Tsugi…</span>
-        <button class="pillbtn" id="syncTsugiArtists" style="margin-left:auto">同步 Tsugi</button>
+        <span class="hint" id="upcomingArtistSyncState" style="margin:0">自动读取 Tsugi</span>
+        <button class="pillbtn" id="syncTsugiArtists" style="margin-left:auto">重新同步</button>
+        <button class="pillbtn" id="openTsugiArtistManager">在追更管理</button>
       </div>
       <div id="upcomingArtistChips" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px"></div>
-      <div class="upcoming-addgrid" style="grid-template-columns:1fr auto">
-        <input class="field" id="upcomingArtistName" placeholder="本地测试时可直接添加艺人，例如 Ado">
-        <button class="save" id="addUpcomingArtist">＋ 关注艺人</button>
-      </div>
-      <p class="hint" style="margin:8px 0 0">部署在 ximinhu66.github.io 后会直接读取 Tsugi 的关注艺人 localStorage；本地打开 HTML 时浏览器会阻止跨域读取，因此可在这里建立 Daily Nexus 本地备用关注。</p>
+      <p class="hint" style="margin:8px 0 0">Daily Nexus 不再单独维护关注艺人；此处与 Music Tab 都直接使用 Tsugi 的关注列表。</p>
     </div>
 
     <div class="upcoming-addbox">
@@ -689,7 +897,7 @@
       </div>
       <div style="margin-top:8px"><button class="save" id="saveUpcomingManual">＋ 添加到 Upcoming</button></div>
     </div>
-    <p class="hint" style="margin:10px 0 0">自动发现优先显示知名游戏 / 高热作品、官方页面实时确认的大型游戏与科技活动，以及 Tsugi / Daily Nexus 中关注艺人的近期新曲。点 ★ 后会保留为你的关注项；任何项目都可以一键加入 Daily Nexus 日历。</p>
+    <p class="hint" style="margin:10px 0 0">自动发现优先显示知名游戏 / 高热作品、官方页面实时确认的大型游戏与科技活动，以及 Tsugi 中关注艺人的近期新曲。点 ★ 后会保留为你的关注项；任何项目都可以一键加入 Daily Nexus 日历。</p>
   </div>
 </div>
 <div class="modal" id="linksModal"><div class="modalcard glass" style="width:min(820px,96vw)">
@@ -1929,8 +2137,23 @@ function migrateUpcomingManual(){
   store.set("upcomingManual",rows);
   return rows;
 }
+const DEFAULT_NAV_CONFIG=[
+  {view:"home",icon:"⌂",label:"今日"},
+  {view:"board",icon:"▦",label:"看板"},
+  {view:"tsugi",icon:"📚",label:"追更"},
+  {view:"meal",icon:"🍜",label:"吃什么"},
+  {view:"x",icon:"𝕏",label:"Timeline"},
+  {view:"music",icon:"♫",label:"音乐"},
+  {view:"focus",icon:"◎",label:"专注"},
+  {view:"tools",icon:"⌘",label:"工具"},
+  {view:"links",icon:"↗",label:"链接"},
+  {view:"settings",icon:"⚙",label:"设置"}
+];
 const state={
   profile:store.get("profile",{nickname:"Daily Nexus",logoText:"DN",logoImage:""}),
+  navConfig:store.get("navConfig",DEFAULT_NAV_CONFIG),
+  xTimelineSource:store.get("xTimelineSource","https://x.com/OpenAI"),
+  musicLibrary:store.get("musicLibrary",[]),
   theme:store.get("theme","auto"),
   city:store.get("city","Seattle"),
   weatherUnit:store.get("weatherUnit","F"),
@@ -1971,6 +2194,8 @@ function applyTheme(){
   try{
     if(window.__deskboardInitialized__)$("#deskboardFrame")?.contentWindow?.postMessage({type:"nexus-theme",theme:t},"*");
   }catch(_){}
+  syncEmbeddedThemes(t);
+  if(window.__xTimelineInitialized)renderXTimeline(true);
 }function cycleTheme(){state.theme=state.theme==="auto"?"dark":state.theme==="dark"?"light":"auto";store.set("theme",state.theme);applyTheme()}
 $("#themeBtn").onclick=cycleTheme;$("#quickTheme").onclick=cycleTheme;matchMedia("(prefers-color-scheme: light)").addEventListener?.("change",()=>{if(state.theme==="auto")applyTheme()});
 function applyBg(){
@@ -2117,14 +2342,233 @@ function addCalendarTask(){
 $("#calendarTaskAdd").onclick=addCalendarTask;$("#calendarTaskInput").onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();addCalendarTask()}};
 renderMiniCalendar();
 
+function normalizedNavConfig(){
+  const defaults=new Map(DEFAULT_NAV_CONFIG.map(x=>[x.view,x]));
+  const incoming=Array.isArray(state.navConfig)?state.navConfig:[];
+  const seen=new Set(),out=[];
+  incoming.forEach(x=>{
+    const d=defaults.get(x?.view);if(!d||seen.has(x.view))return;
+    seen.add(x.view);out.push({view:x.view,icon:String(x.icon||d.icon).slice(0,6),label:String(x.label||d.label).slice(0,12)});
+  });
+  DEFAULT_NAV_CONFIG.forEach(d=>{if(!seen.has(d.view))out.push({...d})});
+  return out;
+}
+function applyNavConfig(){
+  state.navConfig=normalizedNavConfig();
+  const sidebar=document.querySelector('.sidebar'),spacer=sidebar?.querySelector('.spacer');
+  if(!sidebar||!spacer)return;
+  const nodes=new Map($$('.navbtn[data-view]').map(b=>[b.dataset.view,b]));
+  state.navConfig.forEach(item=>{
+    const btn=nodes.get(item.view);if(!btn)return;
+    const icon=btn.querySelector('.navicon'),label=btn.querySelector('span');
+    if(icon)icon.textContent=item.icon;if(label)label.textContent=item.label;
+    sidebar.insertBefore(btn,spacer);
+  });
+  renderNavEditor();
+}
+function renderNavEditor(){
+  const host=$('#navEditorList');if(!host)return;
+  const rows=normalizedNavConfig();
+  host.innerHTML=rows.map((x,i)=>`<div class="nav-editor-row" data-nav-row="${escapeAttr(x.view)}">
+    <input class="field nav-edit-icon" data-nav-icon value="${escapeAttr(x.icon)}" maxlength="6" aria-label="${escapeAttr(x.label)} 图标">
+    <input class="field" data-nav-label value="${escapeAttr(x.label)}" maxlength="12" aria-label="${escapeAttr(x.label)} 名称">
+    <div class="nav-editor-actions"><button data-nav-up="${i}" title="上移">↑</button><button data-nav-down="${i}" title="下移">↓</button></div>
+  </div>`).join('');
+  $$('[data-nav-up]').forEach(b=>b.onclick=()=>moveNavRow(+b.dataset.navUp,-1));
+  $$('[data-nav-down]').forEach(b=>b.onclick=()=>moveNavRow(+b.dataset.navDown,1));
+}
+function collectNavEditor(){
+  return $$('[data-nav-row]').map(row=>({
+    view:row.dataset.navRow,
+    icon:(row.querySelector('[data-nav-icon]')?.value||'').trim(),
+    label:(row.querySelector('[data-nav-label]')?.value||'').trim()
+  }));
+}
+function moveNavRow(index,delta){
+  const rows=collectNavEditor(),j=index+delta;if(j<0||j>=rows.length)return;
+  [rows[index],rows[j]]=[rows[j],rows[index]];state.navConfig=rows;renderNavEditor();
+}
 function switchNexusView(view){
   $$('.navbtn[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===view));
   $$('.view').forEach(v=>v.classList.remove('active'));
   const target=$("#view-"+view);if(target)target.classList.add('active');
   setDeskBoardActive(view==='board');
+  if(view==='tsugi')ensureEmbeddedSite('tsugi');
+  if(view==='meal')ensureEmbeddedSite('meal');
+  if(view==='x')ensureXTimeline();
+  if(view==='music')ensureMusicTab();
   if(view==='focus')renderFocusTasks();
   if(view==='links')renderDeskLinks();
 }
+
+/* ---------- X · single public timeline ---------- */
+let xWidgetPromise=null,xRefreshTimer=null;
+function validXTimelineUrl(raw){
+  const v=String(raw||"").trim();
+  try{
+    const u=new URL(v);
+    return /(^|\.)x\.com$/i.test(u.hostname)||/(^|\.)twitter\.com$/i.test(u.hostname)?v.replace("twitter.com","x.com"):"";
+  }catch{return""}
+}
+function loadXWidgetScript(){
+  if(window.twttr?.widgets)return Promise.resolve(window.twttr);
+  if(xWidgetPromise)return xWidgetPromise;
+  xWidgetPromise=new Promise((resolve,reject)=>{
+    const id="nexus-x-wjs";
+    let sc=document.getElementById(id);
+    if(!sc){
+      sc=document.createElement("script");sc.id=id;sc.async=true;sc.src="https://platform.x.com/widgets.js";sc.charset="utf-8";
+      document.head.appendChild(sc);
+    }
+    const started=Date.now(),timer=setInterval(()=>{
+      if(window.twttr?.widgets){clearInterval(timer);resolve(window.twttr)}
+      else if(Date.now()-started>9000){clearInterval(timer);reject(new Error("X widget timeout"))}
+    },100);
+    sc.onerror=()=>{clearInterval(timer);reject(new Error("X widget script blocked"))};
+  });
+  return xWidgetPromise;
+}
+async function renderXTimeline(force=false){
+  const host=$("#xFeed"),url=validXTimelineUrl(state.xTimelineSource),open=$("#openXSource");
+  if(!host)return;
+  if(open)open.href=url||"https://x.com/";
+  $("#xTimelineUrl").value=url||"";
+  if(!url){
+    host.innerHTML='<div class="x-feed-loading">还没有 Timeline 来源。点击「来源」粘贴一个公开 X List URL。</div>';return
+  }
+  const theme=document.documentElement.dataset.theme==="dark"?"dark":"light";
+  host.innerHTML=`<a class="twitter-timeline" data-theme="${theme}" data-dnt="true" data-chrome="noheader nofooter transparent" data-tweet-limit="30" href="${escapeAttr(url)}">正在加载 X Timeline…</a>`;
+  try{
+    const tw=await loadXWidgetScript();
+    await tw.widgets.load(host);
+    setTimeout(()=>{
+      const iframe=host.querySelector("iframe");
+      if(!iframe){
+        host.innerHTML=`<div class="x-feed-loading">X 官方 Embed 没有成功载入。浏览器的跟踪保护 / 广告拦截可能阻止了 platform.x.com。<br><br><a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a></div>`;
+      }
+    },4500);
+  }catch(e){
+    host.innerHTML=`<div class="x-feed-loading">X 官方 Embed 无法载入。<br>${escapeHtml(e.message)}<br><br><a href="${escapeAttr(url)}" target="_blank" rel="noopener">直接打开 Timeline ↗</a></div>`;
+  }
+}
+function ensureXTimeline(){
+  window.__xTimelineInitialized=true;
+  renderXTimeline();
+  if(!xRefreshTimer){
+    xRefreshTimer=setInterval(()=>{
+      if($("#view-x")?.classList.contains("active"))renderXTimeline(true);
+    },5*60*1000);
+  }
+}
+$("#openXConfig").onclick=()=>{$("#xTimelineUrl").value=state.xTimelineSource||"";$("#xConfig").classList.add("open")};
+$("#closeXConfig").onclick=()=>$("#xConfig").classList.remove("open");
+$("#xConfig").onclick=e=>{if(e.target===$("#xConfig"))$("#xConfig").classList.remove("open")};
+$("#saveXTimeline").onclick=()=>{
+  const url=validXTimelineUrl($("#xTimelineUrl").value);
+  if(!url){alert("请输入有效的 x.com 公开账号或公开 List URL。");return}
+  state.xTimelineSource=url;store.set("xTimelineSource",url);$("#xConfig").classList.remove("open");renderXTimeline(true);
+};
+$("#xUseDemo").onclick=()=>$("#xTimelineUrl").value="https://x.com/OpenAI";
+$("#refreshXTimeline").onclick=()=>renderXTimeline(true);
+
+/* ---------- Music ---------- */
+let musicSyncBusy=false;
+function parseYTMedia(raw){
+  const text=String(raw||"").trim();if(!text)return null;
+  try{
+    const u=new URL(/^https?:\/\//i.test(text)?text:`https://www.youtube.com/watch?v=${text}`);
+    const list=u.searchParams.get("list"),video=u.searchParams.get("v");
+    if(list)return{type:"playlist",id:list,video};
+    if(video)return{type:"video",id:video};
+    if(/youtu\.be$/i.test(u.hostname)){const id=u.pathname.replace(/^\/+/,"").split("/")[0];if(id)return{type:"video",id}}
+    const short=u.pathname.match(/\/shorts\/([^/?]+)/);if(short)return{type:"video",id:short[1]};
+  }catch{}
+  if(/^[\w-]{11}$/.test(text))return{type:"video",id:text};
+  if(/^(PL|OLAK5uy_|RD)[\w-]+/.test(text))return{type:"playlist",id:text};
+  return null;
+}
+function ytMusicSearchUrl(q){return`https://music.youtube.com/search?q=${encodeURIComponent(q)}`}
+function setMusicPlayer(raw,title=""){
+  const parsed=parseYTMedia(raw),frame=$("#musicPlayerFrame"),empty=$("#musicPlayerEmpty");
+  if(!parsed||!frame)return false;
+  if(location.protocol==="file:"){
+    frame.src="about:blank";empty.style.display="grid";
+    empty.innerHTML='<div>⚠ YouTube Error 153 防护<br><br>当前页面是 file:// 本地文件。YouTube Embed 需要 HTTP Referer；请部署到 GitHub Pages 的 HTTPS 地址后再测试播放器。</div>';
+    return true;
+  }
+  const origin=location.origin;
+  const ref=location.href.split("#")[0];
+  const common=`autoplay=1&playsinline=1&enablejsapi=1&origin=${encodeURIComponent(origin)}&widget_referrer=${encodeURIComponent(ref)}`;
+  frame.referrerPolicy="strict-origin-when-cross-origin";
+  frame.src="about:blank";
+  requestAnimationFrame(()=>{
+    frame.src=parsed.type==="playlist"
+      ?`https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(parsed.id)}&${common}`
+      :`https://www.youtube.com/embed/${encodeURIComponent(parsed.id)}?${common}`;
+  });
+  empty.style.display="none";
+  $("#musicNowTitle").textContent=title||(parsed.type==="playlist"?"Playlist":"YouTube");
+  $("#musicNowMeta").textContent=parsed.type==="playlist"?"官方 YouTube Playlist Player":"官方 YouTube Embed Player";
+  return true;
+}
+function renderMusicArtists(){
+  const host=$("#musicArtistRow"),artists=readFollowedArtists();if(!host)return;
+  host.innerHTML=artists.length?artists.map(a=>`<a class="music-artist" href="${escapeAttr(ytMusicSearchUrl(a.name))}" target="_blank" rel="noopener"><span class="music-avatar">♫</span><b>${escapeHtml(a.name)}</b></a>`).join(""):'<div class="upcoming-empty" style="min-width:100%">Tsugi 当前没有关注艺人。请在「追更」Tab 中管理。</div>';
+}
+function renderMusicReleases(){
+  const host=$("#musicReleaseCards");if(!host)return;
+  const rows=(Array.isArray(upcomingMusic)?upcomingMusic:[]).slice().sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,16);
+  host.innerHTML=rows.length?rows.map(x=>{
+    const artist=x.artist||String(x.title||"").split(" · ")[0]||"Artist";
+    const title=String(x.title||"").replace(`${artist} · `,"")||x.title;
+    const q=`${artist} ${title}`;
+    return `<article class="music-card"><div class="music-cover">♫</div><b>${escapeHtml(title)}</b><small>${escapeHtml(artist)} · ${escapeHtml(upMonthDay(x.date))}</small><div class="music-card-actions"><a href="${escapeAttr(ytMusicSearchUrl(q))}" target="_blank" rel="noopener">YT Music ↗</a>${x.url?`<a href="${escapeAttr(x.url)}" target="_blank" rel="noopener">原曲 ↗</a>`:""}</div></article>`
+  }).join(""):'<div class="upcoming-empty" style="grid-column:1/-1">暂时没有 Tsugi 关注艺人的近期新曲。</div>';
+}
+function renderMusicLibrary(){
+  const host=$("#musicLibraryCards"),rows=Array.isArray(state.musicLibrary)?state.musicLibrary:[];if(!host)return;
+  host.innerHTML=rows.length?rows.map((x,i)=>`<article class="music-card"><div class="music-cover">▶</div><b>${escapeHtml(x.name||"Playlist")}</b><small>YouTube Playlist</small><div class="music-card-actions"><button data-music-list-play="${i}">播放</button><button data-music-list-del="${i}">删除</button></div></article>`).join(""):'<div class="upcoming-empty" style="grid-column:1/-1">还没有保存播放列表。</div>';
+  $$("[data-music-list-play]").forEach(b=>b.onclick=()=>{const x=state.musicLibrary[+b.dataset.musicListPlay];if(x)setMusicPlayer(x.url,x.name)});
+  $$("[data-music-list-del]").forEach(b=>b.onclick=()=>{state.musicLibrary.splice(+b.dataset.musicListDel,1);store.set("musicLibrary",state.musicLibrary);renderMusicLibrary()});
+}
+async function syncMusicFromTsugi(force=true){
+  if(musicSyncBusy)return;musicSyncBusy=true;
+  const status=$("#musicSyncStatus");
+  if(status)status.textContent="正在同步 Tsugi…";
+  try{
+    await syncArtistsFromTsugiOrigin();
+    renderMusicArtists();
+    const artists=readFollowedArtists();
+    if(artists.length){
+      await loadUpcoming(force);
+      renderMusicReleases();
+      if(status)status.textContent=`Tsugi · ${artists.length} 位艺人 · 已同步`;
+    }else{
+      upcomingMusic=[];renderMusicReleases();
+      if(status)status.textContent="Tsugi · 0 位艺人";
+    }
+  }finally{musicSyncBusy=false}
+}
+function ensureMusicTab(){
+  window.__musicInitialized=true;
+  renderMusicLibrary();
+  syncMusicFromTsugi(false);
+}
+$("#musicPlay").onclick=()=>{
+  const q=$("#musicInput").value.trim();if(!q)return;
+  if(!setMusicPlayer(q))window.open(ytMusicSearchUrl(q),"_blank","noopener");
+};
+$("#musicSearch").onclick=()=>{const q=$("#musicInput").value.trim();if(q)window.open(ytMusicSearchUrl(q),"_blank","noopener")};
+$("#musicInput").onkeydown=e=>{if(e.key==="Enter")$("#musicPlay").click()};
+$("#refreshMusic").onclick=()=>syncMusicFromTsugi(true);
+$("#manageArtistsInTsugi").onclick=()=>switchNexusView("tsugi");
+$("#addMusicPlaylist").onclick=()=>{
+  const name=$("#musicPlaylistName").value.trim()||"Playlist",url=$("#musicPlaylistUrl").value.trim(),parsed=parseYTMedia(url);
+  if(!parsed||parsed.type!=="playlist"){alert("请粘贴有效的 YouTube / YouTube Music Playlist URL。");return}
+  state.musicLibrary.push({name,url});store.set("musicLibrary",state.musicLibrary);
+  $("#musicPlaylistName").value="";$("#musicPlaylistUrl").value="";renderMusicLibrary();
+};
+
 $$('.navbtn[data-view]').forEach(b=>b.onclick=()=>switchNexusView(b.dataset.view));
 
 let deskboardInitialized=false;
@@ -2147,6 +2591,46 @@ function setDeskBoardActive(active){
   if(active)ensureDeskBoard();
   if(!deskboardInitialized)return;
   try{$("#deskboardFrame")?.contentWindow?.postMessage({type:"nexus-visibility",active:!!active},"*")}catch(_){}
+}
+
+const embeddedSiteState=window.__embeddedSiteState||(window.__embeddedSiteState={tsugi:false,meal:false});
+function resolvedNexusTheme(){
+  return document.documentElement.dataset.theme||((state.theme==="light"||state.theme==="dark")?state.theme:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));
+}
+function syncEmbeddedTheme(name,theme=resolvedNexusTheme()){
+  const frame=$("#"+name+"Frame"),st=window.__embeddedSiteState;if(!frame||!st?.[name])return;
+  try{
+    const win=frame.contentWindow,doc=win.document;
+    doc.documentElement.dataset.theme=theme;
+    if(name==="tsugi"){
+      win.localStorage.setItem("tsugi-theme",theme);
+      const ownBtn=doc.getElementById("themeBtn");if(ownBtn)ownBtn.style.display="none";
+    }else if(name==="meal"){
+      win.localStorage.setItem("theme",JSON.stringify(theme));
+      const ownBtn=doc.getElementById("themeBtn");if(ownBtn)ownBtn.style.display="none";
+      try{win.drawWheel?.()}catch(_){}
+    }
+    const meta=doc.querySelector('meta[name="theme-color"]');
+    if(meta)meta.setAttribute('content',theme==="dark"?'#0d0f14':'#eef2f7');
+  }catch(_){
+    // Local file testing is cross-origin; after GitHub Pages deployment both child apps share ximinhu66.github.io and this succeeds.
+  }
+}
+function syncEmbeddedThemes(theme=resolvedNexusTheme()){
+  syncEmbeddedTheme('tsugi',theme);syncEmbeddedTheme('meal',theme);
+}
+function ensureEmbeddedSite(name){
+  if(embeddedSiteState[name]){syncEmbeddedTheme(name);return}
+  const frame=$("#"+name+"Frame"),loading=$("#"+name+"Loading");
+  if(!frame)return;
+  const src=frame.dataset.src;if(!src)return;
+  embeddedSiteState[name]=true;
+  frame.addEventListener("load",()=>{
+    syncEmbeddedTheme(name);
+    loading?.classList.add("hide");
+    setTimeout(()=>{if(loading)loading.style.display="none"},220);
+  });
+  frame.src=src;
 }
 
 
@@ -2212,6 +2696,12 @@ $("#saveDeskLinks").onclick=()=>{
 };
 $("#resetDeskLinks").onclick=()=>{deskLinkDraft=DESKBOARD_DEFAULT_EXTRA.map(x=>({...x}));renderDeskLinkEditor()};
 window.addEventListener('storage',e=>{if(e.key===DESKBOARD_LINK_KEY)renderDeskLinks()});
+window.addEventListener("storage",e=>{
+  if(e.key===TSUGI_ARTIST_KEY){
+    renderUpcomingArtists();
+    if(window.__musicInitialized)syncMusicFromTsugi(false);
+  }
+});
 renderDeskLinks();
 
 
@@ -2418,28 +2908,15 @@ function saveNexusArtists(rows){
   localStorage.setItem(NEXUS_ARTIST_KEY,JSON.stringify(rows||[]));
 }
 function readFollowedArtists(){
-  const merged=new Map();
   try{
     const x=JSON.parse(localStorage.getItem(TSUGI_ARTIST_KEY)||"[]");
-    if(Array.isArray(x))x.filter(a=>a?.name).forEach(a=>merged.set(String(a.name).toLowerCase(),a));
-  }catch{}
-  readNexusArtists().forEach(a=>merged.set(String(a.name).toLowerCase(),a));
-  return [...merged.values()];
+    return Array.isArray(x)?x.filter(a=>a?.name):[];
+  }catch{return[]}
 }
 function renderUpcomingArtists(){
-  const host=$("#upcomingArtistChips"),stateEl=$("#upcomingArtistSyncState");
-  if(!host)return;
-  const artists=readFollowedArtists();
-  host.innerHTML=artists.length?artists.map(a=>`
-    <span class="up-cat" style="font-size:10px;padding:5px 8px">${escapeHtml(a.name)}
-      ${a.localNexus?`<button data-remove-nexus-artist="${escapeAttr(a.name)}" style="border:0;background:transparent;padding:0 0 0 5px;color:var(--muted)">×</button>`:""}
-    </span>`).join(""):'<span class="hint">尚无关注艺人</span>';
-  if(stateEl)stateEl.textContent=`${artists.length} 位艺人 · 自动检查 Apple Music / Tsugi`;
-  $$("[data-remove-nexus-artist]").forEach(b=>b.onclick=()=>{
-    const name=b.dataset.removeNexusArtist;
-    saveNexusArtists(readNexusArtists().filter(a=>a.name!==name));
-    renderUpcomingArtists();loadUpcoming(true);
-  });
+  const host=$("#upcomingArtistChips"),stateEl=$("#upcomingArtistSyncState"),artists=readFollowedArtists();
+  if(host)host.innerHTML=artists.length?artists.map(a=>`<span class="up-cat" style="font-size:10px;padding:5px 8px">${escapeHtml(a.name)}</span>`).join(""):'<span class="hint">Tsugi 当前没有关注艺人</span>';
+  if(stateEl)stateEl.textContent=`Tsugi · ${artists.length} 位艺人`;
 }
 async function resolveArtistByName(name){
   try{
@@ -2450,30 +2927,22 @@ async function resolveArtistByName(name){
   }catch{return null}
 }
 async function syncArtistsFromTsugiOrigin(){
-  const iframe=$("#tsugiArtistBridge"),status=$("#upcomingArtistSyncState");
+  const status=$("#upcomingArtistSyncState");
+  const direct=readFollowedArtists();
+  if(direct.length){
+    renderUpcomingArtists();
+    if(status)status.textContent=`Tsugi · ${direct.length} 位艺人`;
+    return true;
+  }
+  const iframe=$("#tsugiArtistBridge");
   if(!iframe)return false;
-  if(status)status.textContent="正在连接 Tsugi…";
+  if(status)status.textContent="正在读取 Tsugi…";
   return await new Promise(resolve=>{
-    let done=false;
-    const finish=ok=>{if(done)return;done=true;clearTimeout(timer);resolve(ok)};
-    const timer=setTimeout(()=>finish(false),5500);
-    iframe.onload=()=>{
-      try{
-        // This succeeds after deployment because both apps live on ximinhu66.github.io.
-        const raw=iframe.contentWindow.localStorage.getItem(TSUGI_ARTIST_KEY)||"[]";
-        const rows=JSON.parse(raw);
-        if(Array.isArray(rows)){
-          localStorage.setItem(TSUGI_ARTIST_KEY,JSON.stringify(rows));
-          renderUpcomingArtists();
-          if(status)status.textContent=`已从 Tsugi 同步 ${rows.length} 位艺人`;
-          finish(true);return;
-        }
-      }catch(e){
-        if(status)status.textContent="当前为本地/跨域模式 · 使用 Daily Nexus 本地关注";
-      }
-      finish(false);
-    };
-    iframe.src=`${TSUGI_PAGE_URL}?bridge=${Date.now()}`;
+    let settled=false;
+    const finish=ok=>{if(settled)return;settled=true;clearTimeout(timer);renderUpcomingArtists();resolve(ok)};
+    const timer=setTimeout(()=>finish(readFollowedArtists().length>0),5000);
+    iframe.onload=()=>finish(readFollowedArtists().length>0);
+    iframe.src=`${TSUGI_PAGE_URL}?nexus_sync=${Date.now()}`;
   });
 }
 function jsonpUpcoming(url,timeout=10000){
@@ -2746,17 +3215,7 @@ $("#syncTsugiArtists").onclick=async()=>{
   renderUpcomingArtists();
   loadUpcoming(true);
 };
-$("#addUpcomingArtist").onclick=async()=>{
-  const input=$("#upcomingArtistName"),name=input.value.trim();if(!name)return;
-  const resolved=await resolveArtistByName(name);
-  const row=resolved||{name,localNexus:true};
-  const list=readNexusArtists();
-  if(!list.some(a=>String(a.name).toLowerCase()===String(row.name).toLowerCase())){
-    list.push({...row,localNexus:true});saveNexusArtists(list);
-  }
-  input.value="";renderUpcomingArtists();loadUpcoming(true);
-};
-$("#upcomingArtistName").addEventListener("keydown",e=>{if(e.key==="Enter")$("#addUpcomingArtist").click()});
+$("#openTsugiArtistManager").onclick=()=>switchNexusView("tsugi");
 renderUpcomingArtists();
 syncArtistsFromTsugiOrigin().then(ok=>{renderUpcomingArtists();if(ok)loadUpcoming(true)});
 
@@ -2862,6 +3321,13 @@ const quests=[
 let questCategory='全部',questDeck=[],questNoRepeat=true,currentQuest=null;const categories=['全部',...new Set(quests.flatMap(q=>q[2]))];function buildQuestCategories(){$("#questCategories").innerHTML=categories.map(c=>`<button class="${c===questCategory?'active':''}" data-cat="${escapeAttr(c)}">${escapeHtml(c)}</button>`).join('');$$('[data-cat]').forEach(b=>b.onclick=()=>{questCategory=b.dataset.cat;questDeck=[];buildQuestCategories();nextQuest()})}function questPool(){return questCategory==='全部'?quests:quests.filter(q=>q[2].includes(questCategory))}function nextQuest(){const pool=questPool();$("#questPoolCount").textContent=pool.length;if(questNoRepeat){if(!questDeck.length)questDeck=[...pool].sort(()=>Math.random()-.5);currentQuest=questDeck.pop()}else currentQuest=pool[Math.floor(Math.random()*pool.length)];$("#questTitle").textContent=currentQuest[0];$("#questDesc").textContent=currentQuest[1];$("#questMeta").innerHTML=currentQuest[2].map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('');const fav=state.questFav.includes(currentQuest[0]);$("#questFavorite").textContent=fav?'★ 已收藏':'☆ 收藏'}buildQuestCategories();nextQuest();$("#newQuest").onclick=nextQuest;$("#questNoRepeat").onclick=()=>{questNoRepeat=!questNoRepeat;questDeck=[];$("#questNoRepeat").textContent='无重复模式：'+(questNoRepeat?'开':'关')};$("#questFavorite").onclick=()=>{if(!currentQuest)return;const i=state.questFav.indexOf(currentQuest[0]);if(i>=0)state.questFav.splice(i,1);else state.questFav.push(currentQuest[0]);store.set('questFav',state.questFav);$("#questFavorite").textContent=i>=0?'☆ 收藏':'★ 已收藏'};
 const decisions=['去做','先等等','换一个方案','可以','不建议','现在就开始','明天再说','只做 10 分钟','删掉它','买之前再等 24 小时'];$("#decisionBtn").onclick=()=>$("#decisionOut").textContent=decisions[Math.floor(Math.random()*decisions.length)];$$('[data-dice]').forEach(b=>b.onclick=()=>$("#diceOut").textContent='D'+b.dataset.dice+' → '+(1+Math.floor(Math.random()*+b.dataset.dice)));$("#uuidBtn").onclick=()=>$("#uuidOut").textContent=crypto.randomUUID?.()||'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0,v=c==='x'?r:r&3|8;return v.toString(16)});$("#passwordBtn").onclick=()=>{const chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%*-_';$("#passwordOut").textContent=Array.from(crypto.getRandomValues(new Uint32Array(20)),x=>chars[x%chars.length]).join('')};$("#randomNumBtn").onclick=()=>{let a=+$("#randMin").value,b=+$("#randMax").value;if(a>b)[a,b]=[b,a];$("#randomNumOut").textContent=Math.floor(Math.random()*(b-a+1))+a};function updateTimestamp(){$("#timestampOut").textContent=Math.floor(Date.now()/1000)}$("#timestampBtn").onclick=updateTimestamp;updateTimestamp();$$('[data-copy]').forEach(b=>b.onclick=async()=>{const v=$(b.dataset.copy).textContent;try{await navigator.clipboard.writeText(v);b.textContent='已复制';setTimeout(()=>b.textContent='复制',900)}catch{}});
 
+$("#saveNavConfig").onclick=()=>{
+  state.navConfig=collectNavEditor();store.set("navConfig",state.navConfig);applyNavConfig();
+};
+$("#resetNavConfig").onclick=()=>{
+  state.navConfig=DEFAULT_NAV_CONFIG.map(x=>({...x}));store.set("navConfig",state.navConfig);applyNavConfig();
+};
+applyNavConfig();
 $("#saveProfile").onclick=()=>{
   state.profile.nickname=$("#nicknameInput").value.trim()||"Daily Nexus";
   state.profile.logoText=$("#logoTextInput").value.trim()||"DN";
