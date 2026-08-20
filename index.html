@@ -101,7 +101,7 @@
     .header-actions{display:flex;align-items:center;justify-content:center}
     .calendar-quick{display:none}
     .pillbtn,.iconbtn,.action{border:1px solid var(--line);background:color-mix(in srgb,var(--panel2) 88%,transparent);border-radius:14px}.pillbtn{padding:8px 11px}.iconbtn{width:42px;height:42px}.view{min-height:0;display:none}.view.active{display:block;height:100%}
-    .dashboard{height:100%;display:grid;grid-template-columns:1.34fr .96fr .70fr;grid-template-rows:minmax(395px,1.18fr) minmax(270px,.82fr);gap:12px}.card{border-radius:var(--radius);padding:16px;min-width:0;min-height:0;overflow:hidden;position:relative}.cardhead{display:flex;align-items:center;gap:10px;margin-bottom:9px}.cardhead h2{font-size:15px;margin:0}.cardhead .sub{margin-left:auto;color:var(--muted);font-size:12px}.homecalendar{grid-column:1;grid-row:1}.memo{grid-column:2;grid-row:1}.wheelcard{grid-column:3;grid-row:1}.upcomingcard{grid-column:1;grid-row:2}.discover{grid-column:2/span 2;grid-row:2}
+    .dashboard{height:100%;display:grid;grid-template-columns:1.34fr .96fr .70fr;grid-template-rows:minmax(395px,1.18fr) minmax(270px,.82fr);gap:12px}.card{border-radius:var(--radius);padding:16px;min-width:0;min-height:0;overflow:hidden;position:relative}.cardhead{display:flex;align-items:center;gap:10px;margin-bottom:9px}.cardhead h2{font-size:15px;margin:0}.cardhead .sub{margin-left:auto;color:var(--muted);font-size:12px}.homecalendar{grid-column:1;grid-row:1}.memo{grid-column:2;grid-row:1}.home-links-card{grid-column:3;grid-row:1}.upcomingcard{grid-column:1;grid-row:2}.discover{grid-column:2/span 2;grid-row:2}
 
     .home-cal-body{height:calc(100% - 33px);display:grid;grid-template-columns:minmax(0,1.34fr) minmax(180px,.66fr);gap:12px}
     .home-cal-month{min-width:0;padding-right:10px;border-right:1px solid var(--line)}
@@ -142,7 +142,7 @@
 
     textarea{width:100%;height:105px;resize:none;border:0;outline:none;background:transparent;line-height:1.55;font-size:14px}.memo-foot{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding-top:10px}.memo-foot input{flex:1;min-width:0;border:0;outline:none;background:transparent;font-size:13px}.miniadd{border:0;background:color-mix(in srgb,var(--accent) 18%,transparent);padding:8px 10px;border-radius:11px}.tasks{margin-top:7px;display:flex;gap:7px;overflow:auto;padding-bottom:2px}.taskchip{white-space:nowrap;border:1px solid var(--line);padding:6px 9px;border-radius:999px;font-size:11px;color:var(--muted);background:var(--panel2)}.taskchip.done{text-decoration:line-through;opacity:.6}
     .memo-empty{margin-top:8px;border:1px dashed var(--line);border-radius:13px;padding:8px 10px;font-size:11px;color:var(--muted);display:none}.memo-empty.show{display:block}
-    .wheel-wrap{height:calc(100% - 32px);display:grid;grid-template-rows:minmax(270px,1fr) auto auto;gap:7px;align-items:center}.canvasbox{height:100%;min-height:270px;position:relative;display:grid;place-items:center}#wheel{width:min(310px,100%);height:auto;max-height:292px;aspect-ratio:1}.pointer{position:absolute;top:3px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-top:23px solid var(--text);filter:drop-shadow(0 4px 6px rgba(0,0,0,.3))}.spin{border:0;border-radius:13px;padding:8px 12px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:800}.wheel-tools{display:flex;gap:8px}.wheel-tools button{flex:1;border:1px solid var(--line);background:var(--panel2);border-radius:11px;padding:6px;font-size:10px}
+    
 
     .upcoming-toolbar{display:flex;align-items:center;gap:6px;margin:-1px 0 9px;overflow-x:auto;scrollbar-width:none}
     .upcoming-toolbar::-webkit-scrollbar{display:none}
@@ -307,7 +307,7 @@
     .day-checklist h4{font-size:15px;margin:0}.day-checklist .day-sub{font-size:11px;color:var(--muted);margin:4px 0 12px}.calendar-add{display:flex;gap:7px;margin-bottom:10px}.calendar-add input{flex:1}.calendar-task-list{display:grid;gap:7px;max-height:300px;overflow:auto}.calendar-task{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:9px;background:var(--panel)}.calendar-task input{accent-color:var(--accent)}.calendar-task span{font-size:12px}.calendar-task.done span{text-decoration:line-through;opacity:.55}.calendar-task button{border:0;background:transparent;color:var(--muted);font-size:15px}.calendar-task-empty{border:1px dashed var(--line);border-radius:12px;padding:18px;text-align:center;color:var(--muted);font-size:11px}
 
     .modal{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;place-items:center;padding:18px;z-index:20}.modal.open{display:grid}.modalcard{width:min(920px,96vw);max-height:90vh;border-radius:22px;padding:16px;overflow:auto}.modaltop{display:flex;align-items:center;margin-bottom:10px}.modaltop h3{margin:0}.modaltop button{margin-left:auto}.video{aspect-ratio:16/9;width:100%;border:0;border-radius:16px;background:#000}.event-editor-list{display:grid;gap:7px;margin-top:12px}.event-row{display:grid;grid-template-columns:1fr 160px auto;gap:7px;align-items:center}.event-row button{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:8px}.muted{color:var(--muted)}
-    @media(max-width:1100px){.topbar{grid-template-columns:300px minmax(0,1fr) 84px}.header-actions{gap:4px}.header-weather{grid-template-columns:305px minmax(250px,1fr);grid-template-rows:58px 1fr}.hw-metric{min-width:82px;padding:3px 9px}.header-forecast{grid-template-columns:repeat(4,minmax(100px,1fr))}.calendar-quick{display:inline-grid}.dashboard{grid-template-columns:1fr 1fr;grid-template-rows:minmax(320px,1.15fr) 1fr 1fr}.homecalendar{grid-column:1/span 2;grid-row:1}.memo{grid-column:1;grid-row:2}.wheelcard{grid-column:2;grid-row:2}.upcomingcard{grid-column:1;grid-row:3}.discover{grid-column:2;grid-row:3}.discover-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media(max-width:1100px){.topbar{grid-template-columns:300px minmax(0,1fr) 84px}.header-actions{gap:4px}.header-weather{grid-template-columns:305px minmax(250px,1fr);grid-template-rows:58px 1fr}.hw-metric{min-width:82px;padding:3px 9px}.header-forecast{grid-template-columns:repeat(4,minmax(100px,1fr))}.calendar-quick{display:inline-grid}.dashboard{grid-template-columns:1fr 1fr;grid-template-rows:minmax(320px,1.15fr) 1fr 1fr}.homecalendar{grid-column:1/span 2;grid-row:1}.memo{grid-column:1;grid-row:2}.home-links-card{grid-column:2;grid-row:2}.upcomingcard{grid-column:1;grid-row:3}.discover{grid-column:2;grid-row:3}.discover-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 
     /* v7 · 非金融看板区域整体字号放大 */
@@ -339,8 +339,6 @@
     .view:not(#view-board) .statusitem b{font-size:16px}
     .view:not(#view-board) label{font-size:13px}
     .view:not(#view-board) .field{font-size:14px}
-    .links-page .link-section-head h3{font-size:17px}
-    .links-page .link-section-head span{font-size:12px}
     .nexus-link b{font-size:14px}
     .nexus-link small{font-size:11px}
     .modalcard{font-size:15px}
@@ -450,11 +448,8 @@
     .embed-loading b{font-size:15px}.embed-loading span{font-size:11px;color:var(--muted)}
 
     .board-loading{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:var(--bg);color:var(--muted);transition:opacity .18s ease}.board-loading>div{text-align:center}.board-loading b{display:block;color:var(--text);font-size:16px;margin-bottom:6px}.board-loading span{font-size:11px}.board-loading.hide{opacity:0;pointer-events:none}
-    .links-page{height:100%;display:flex;flex-direction:column;overflow:hidden}
-    .links-page>.section-title{flex:0 0 auto}
     .links-actions{margin-left:auto;display:flex;gap:7px}
     .links-actions button,.links-actions a{border:1px solid var(--line);background:var(--panel2);border-radius:11px;padding:7px 10px;font-size:10px}
-    .links-scroll{flex:1;min-height:0;overflow:auto;padding-right:2px}
     .link-section{margin-bottom:18px}
     .link-section-head{display:flex;align-items:end;gap:8px;margin-bottom:8px}
     .link-section-head h3{font-size:12px;margin:0}
@@ -467,6 +462,44 @@
     .nexus-link small{display:block;color:var(--muted);font-size:12px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .nexus-link .go{color:var(--muted);font-size:15px}
     .link-empty{border:1px dashed var(--line);border-radius:14px;padding:18px;color:var(--muted);font-size:11px;text-align:center}
+    .home-links-card{display:flex;flex-direction:column}
+    .home-links-card .cardhead{flex:0 0 auto}
+    .home-links-scroll{flex:1;min-height:0;overflow:auto;padding-right:2px}
+    .home-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .home-link{
+      min-width:0;min-height:72px;border:1px solid var(--line);border-radius:14px;
+      background:color-mix(in srgb,var(--panel2) 68%,transparent);padding:9px 10px;
+      display:grid;grid-template-columns:35px minmax(0,1fr) auto;gap:8px;align-items:center;
+      transition:transform .12s ease,border-color .12s ease,background .12s ease
+    }
+    .home-link:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--accent) 38%,var(--line));background:color-mix(in srgb,var(--accent) 7%,var(--panel2))}
+    .home-link .hli{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 12%,var(--panel));font-size:16px}
+    .home-link b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .home-link small{display:block;font-size:9px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .home-link .hlgo{font-size:12px;color:var(--muted)}
+    .home-link-more-toggle{
+      width:100%;margin-top:9px;border:1px solid var(--line);background:var(--panel2);color:var(--muted);
+      border-radius:11px;padding:7px 9px;font-size:10px;display:flex;align-items:center;justify-content:center;gap:6px
+    }
+    .home-link-more-toggle .chev{transition:transform .16s ease}
+    .home-link-more-toggle.open .chev{transform:rotate(180deg)}
+    .home-more-links{padding-top:8px}
+    .home-more-links[hidden]{display:none}
+    .home-links-card .pillbtn{padding:6px 9px}
+    .link-edit-row{
+      grid-template-columns:58px minmax(120px,1fr) minmax(190px,1.7fr) 88px auto!important
+    }
+    .link-edit-actions{display:flex;gap:4px}
+    .link-edit-actions button{width:31px;padding:8px 0}
+    .add-link-row{grid-template-columns:58px minmax(120px,1fr) minmax(190px,1.7fr) 88px auto!important}
+    @media(max-width:740px){
+      .home-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .home-link{grid-template-columns:31px minmax(0,1fr);min-height:66px;padding:8px}
+      .home-link .hli{width:31px;height:31px}.home-link .hlgo{display:none}
+      .link-edit-row,.add-link-row{grid-template-columns:50px 1fr!important}
+      .link-edit-row input:nth-child(3),.link-edit-row select,.add-link-row input:nth-child(3),.add-link-row select{grid-column:1/-1}
+      .link-edit-actions,.add-link-row button{grid-column:1/-1}
+    }
     .link-sync{border-top:1px solid var(--line);padding-top:10px;margin-top:6px;display:flex;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
     .sync-dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 12%,transparent)}
     .link-editor-list{display:grid;gap:8px;margin:12px 0}
@@ -475,7 +508,7 @@
     .link-edit-row button{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:9px}
     .add-link-row{display:grid;grid-template-columns:64px 1fr 1.8fr auto;gap:7px;align-items:end}
 
-    @media(max-width:740px){html,body{overflow:hidden}.app{grid-template-columns:1fr;grid-template-rows:1fr 68px;padding:8px;gap:8px}.sidebar{grid-row:2;border-radius:21px;flex-direction:row;justify-content:flex-start;padding:6px;order:2;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.sidebar::-webkit-scrollbar{display:none}.logo,.spacer,.sidebar .themeSide{display:none}.navbtn{width:52px;min-width:52px;flex:0 0 52px;height:54px}.navicon{font-size:18px}.navbtn span{font-size:10px}.shell{grid-row:1;min-height:0}.topbar{min-height:92px;padding:7px 9px;grid-template-columns:118px 1fr 76px;gap:7px}.header-actions{gap:4px}.header-clock{padding:0 8px}.header-clock-photo{display:none}.header-clock .time{font-size:32px;letter-spacing:-1.6px}.header-clock .date{font-size:9px;margin-top:5px}.header-clock .greet{display:none}.header-weather{display:block;padding:0}.hw-current{padding:0 5px;gap:8px;height:100%}.hw-icon{font-size:27px}.hw-temp{font-size:29px;letter-spacing:-1.2px}.hw-place{font-size:10px;max-width:90px}.hw-desc{font-size:9px}.hw-metrics,.header-forecast{display:none}.header-actions .iconbtn{width:36px;height:36px}.calendar-quick{display:inline-grid}.calendar-modal-layout{grid-template-columns:1fr}.calendar-panel,.day-checklist{min-height:0}.calendar-grid button{min-height:36px}.dashboard{display:block;overflow:auto;padding-bottom:4px}.card{margin-bottom:9px;min-height:230px}.homecalendar{min-height:380px}.home-cal-body{grid-template-columns:1fr}.home-cal-month{padding-right:0;border-right:0}.home-today-panel{border-top:1px solid var(--line);padding-top:9px;margin-top:4px;min-height:130px}.home-calendar-grid button{height:34px}.wheelcard{min-height:310px}#wheel{width:min(300px,100%);max-height:285px}.event-list{grid-template-columns:repeat(3,minmax(115px,1fr));overflow:auto}.discover{min-height:390px}.workspace,.tools-layout{display:block;overflow:auto}.bigcard{margin-bottom:9px}.settings-grid{grid-template-columns:1fr}.focusclock{font-size:60px}.tool-grid{grid-template-columns:1fr 1fr}.event-row{grid-template-columns:1fr}.discover-grid{height:360px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}.board-frame-wrap{border-radius:18px}.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nexus-link{grid-template-columns:34px 1fr;min-height:82px;padding:10px}.nexus-link .li{width:34px;height:34px}.nexus-link .go{display:none}.link-edit-row,.add-link-row{grid-template-columns:54px 1fr}.link-edit-row input:nth-child(3),.add-link-row input:nth-child(3){grid-column:1/-1}.link-edit-row button,.add-link-row button{grid-column:1/-1}.links-actions{gap:4px}.links-actions a,.links-actions button{padding:6px 8px}}
+    @media(max-width:740px){html,body{overflow:hidden}.app{grid-template-columns:1fr;grid-template-rows:1fr 68px;padding:8px;gap:8px}.sidebar{grid-row:2;border-radius:21px;flex-direction:row;justify-content:flex-start;padding:6px;order:2;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}.sidebar::-webkit-scrollbar{display:none}.logo,.spacer,.sidebar .themeSide{display:none}.navbtn{width:52px;min-width:52px;flex:0 0 52px;height:54px}.navicon{font-size:18px}.navbtn span{font-size:10px}.shell{grid-row:1;min-height:0}.topbar{min-height:92px;padding:7px 9px;grid-template-columns:118px 1fr 76px;gap:7px}.header-actions{gap:4px}.header-clock{padding:0 8px}.header-clock-photo{display:none}.header-clock .time{font-size:32px;letter-spacing:-1.6px}.header-clock .date{font-size:9px;margin-top:5px}.header-clock .greet{display:none}.header-weather{display:block;padding:0}.hw-current{padding:0 5px;gap:8px;height:100%}.hw-icon{font-size:27px}.hw-temp{font-size:29px;letter-spacing:-1.2px}.hw-place{font-size:10px;max-width:90px}.hw-desc{font-size:9px}.hw-metrics,.header-forecast{display:none}.header-actions .iconbtn{width:36px;height:36px}.calendar-quick{display:inline-grid}.calendar-modal-layout{grid-template-columns:1fr}.calendar-panel,.day-checklist{min-height:0}.calendar-grid button{min-height:36px}.dashboard{display:block;overflow:auto;padding-bottom:4px}.card{margin-bottom:9px;min-height:230px}.homecalendar{min-height:380px}.home-cal-body{grid-template-columns:1fr}.home-cal-month{padding-right:0;border-right:0}.home-today-panel{border-top:1px solid var(--line);padding-top:9px;margin-top:4px;min-height:130px}.home-calendar-grid button{height:34px}.home-links-card{min-height:310px}.event-list{grid-template-columns:repeat(3,minmax(115px,1fr));overflow:auto}.discover{min-height:390px}.workspace,.tools-layout{display:block;overflow:auto}.bigcard{margin-bottom:9px}.settings-grid{grid-template-columns:1fr}.focusclock{font-size:60px}.tool-grid{grid-template-columns:1fr 1fr}.event-row{grid-template-columns:1fr}.discover-grid{height:360px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}.board-frame-wrap{border-radius:18px}.link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nexus-link{grid-template-columns:34px 1fr;min-height:82px;padding:10px}.nexus-link .li{width:34px;height:34px}.nexus-link .go{display:none}.link-edit-row,.add-link-row{grid-template-columns:54px 1fr}.link-edit-row input:nth-child(3),.add-link-row input:nth-child(3){grid-column:1/-1}.link-edit-row button,.add-link-row button{grid-column:1/-1}.links-actions{gap:4px}.links-actions a,.links-actions button{padding:6px 8px}}
   </style>
 </head>
 <body>
@@ -490,7 +523,6 @@
     <button class="navbtn" data-view="music"><div><div class="navicon">♫</div><span>音乐</span></div></button>
     <button class="navbtn" data-view="focus"><div><div class="navicon">◎</div><span>专注</span></div></button>
     <button class="navbtn" data-view="tools"><div><div class="navicon">⌘</div><span>工具</span></div></button>
-    <button class="navbtn" data-view="links"><div><div class="navicon">↗</div><span>链接</span></div></button>
     <button class="navbtn" data-view="settings"><div><div class="navicon">⚙</div><span>设置</span></div></button>
     <div class="spacer"></div><button class="navbtn themeSide" id="themeBtn"><div><div class="navicon">◐</div><span>主题</span></div></button>
   </aside>
@@ -547,8 +579,20 @@
         <div class="memo-foot"><input id="taskInput" placeholder="添加一个小任务…"/><button class="miniadd" id="addTask">＋</button></div><div class="tasks" id="tasks"></div><div class="memo-empty" id="memoEmpty">Tip：小任务会自动出现在「专注」页的目标选择里。</div>
       </article>
 
-      <article class="card glass wheelcard">
-        <div class="cardhead"><h2>今天吃什么</h2><span class="sub" id="wheelResult">交给随机性</span></div><div class="wheel-wrap"><div class="canvasbox"><canvas id="wheel" width="480" height="480"></canvas><div class="pointer"></div></div><button class="spin" id="spinBtn">开始转盘</button><div class="wheel-tools"><button id="editWheel">编辑选项</button><button id="shuffleWheel">随机重排</button></div></div>
+      <article class="card glass home-links-card">
+        <div class="cardhead">
+          <h2>常用链接</h2>
+          <span class="sub"><button class="pillbtn" id="manageHomeLinks">编辑</button></span>
+        </div>
+        <div class="home-links-scroll">
+          <div class="home-link-grid" id="homeCommonLinks"></div>
+          <button class="home-link-more-toggle" id="toggleMoreLinks">
+            <span>更多链接</span><span id="homeMoreCount">0</span><span class="chev">⌄</span>
+          </button>
+          <div class="home-more-links" id="homeMoreLinksWrap" hidden>
+            <div class="home-link-grid" id="homeMoreLinks"></div>
+          </div>
+        </div>
       </article>
       <article class="card glass upcomingcard">
         <div class="cardhead">
@@ -747,28 +791,6 @@
       </article>
     </div></section>
 
-    <section class="view" id="view-links">
-      <article class="bigcard glass links-page">
-        <div class="section-title">
-          <h2>常用链接</h2>
-          <p id="deskLinkCount">统一入口</p>
-          <div class="links-actions">
-            <button id="refreshDeskLinks">同步</button>
-            <button id="manageDeskLinks">管理</button>
-          </div>
-        </div>
-        <div class="links-scroll">
-          <div class="link-section">
-            <div class="link-section-head"><h3>固定入口</h3></div>
-            <div class="link-grid" id="deskFixedLinks"></div>
-          </div>
-          <div class="link-section">
-            <div class="link-section-head"><h3>更多链接</h3></div>
-            <div class="link-grid" id="deskExtraLinks"></div>
-          </div>
-        </div>
-      </article>
-    </section>
 
     <section class="view" id="view-settings"><div class="bigcard glass" style="height:100%"><div class="section-title"><h2>设置</h2><p>全部保存在 localStorage</p></div>
       <div class="settings-grid">
@@ -847,7 +869,6 @@
   </main>
 </div>
 
-<div class="modal" id="wheelModal"><div class="modalcard glass"><div class="modaltop"><h3>编辑转盘</h3><button class="iconbtn closeModal">×</button></div><p class="hint">每行一个选项，建议 4–12 项。</p><textarea class="field" id="wheelEditor" style="height:220px"></textarea><div style="margin-top:10px"><button class="save" id="saveWheel">保存</button></div></div></div>
 <div class="modal" id="calendarModal"><div class="modalcard glass" style="width:min(860px,96vw)">
   <div class="modaltop"><h3>日历 · 日期清单</h3><button class="iconbtn closeModal">×</button></div>
   <div class="calendar-modal-layout">
@@ -915,17 +936,18 @@
     <p class="hint" style="margin:10px 0 0">自动发现优先显示知名游戏 / 高热作品、官方页面实时确认的大型游戏与科技活动，以及 Tsugi 中关注艺人的近期新曲。点 ★ 后会保留为你的关注项；任何项目都可以一键加入 Daily Nexus 日历。</p>
   </div>
 </div>
-<div class="modal" id="linksModal"><div class="modalcard glass" style="width:min(820px,96vw)">
-  <div class="modaltop"><h3>管理常用链接</h3><button class="iconbtn closeModal">×</button></div>
-  <p class="hint">这些链接现在统一由 Daily Nexus 管理。继续沿用 <code>deskboard_extra_links_v1</code>，因此你以前在 DeskBoard 保存的自定义链接不会丢失。</p>
+<div class="modal" id="linksModal"><div class="modalcard glass" style="width:min(960px,96vw)">
+  <div class="modaltop"><h3>管理首页链接</h3><button class="iconbtn closeModal">×</button></div>
+  <p class="hint">所有链接都可以修改或替换。「常用」会直接显示在今日首页；「更多」默认收进折叠菜单。↑ ↓ 可调整显示顺序。</p>
   <div class="link-editor-list" id="deskLinkEditor"></div>
   <div class="add-link-row">
     <div><label>图标</label><input class="field" id="newDeskLinkEmoji" value="🔗" maxlength="4"></div>
     <div><label>名称</label><input class="field" id="newDeskLinkName" placeholder="网站名称"></div>
     <div><label>网址</label><input class="field" id="newDeskLinkUrl" placeholder="https://example.com/"></div>
+    <div><label>位置</label><select class="field" id="newDeskLinkGroup"><option value="common">常用</option><option value="more">更多</option></select></div>
     <button class="pillbtn" id="addDeskLink">＋ 添加</button>
   </div>
-  <div style="margin-top:12px"><button class="save" id="saveDeskLinks">保存链接</button> <button class="pillbtn" id="resetDeskLinks">恢复默认</button></div>
+  <div style="margin-top:12px"><button class="save" id="saveDeskLinks">保存全部链接</button> <button class="pillbtn" id="resetDeskLinks">恢复默认</button></div>
 </div></div>
 <div class="modal" id="liveModal"><div class="modalcard glass"><div class="modaltop"><h3 id="liveModalTitle">YouTube Live</h3><button class="iconbtn closeModal">×</button></div><iframe class="video" id="liveFrame" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe><p class="hint">若当前没有可嵌入的直播，播放器会显示不可用；可同时使用“频道 ↗”打开频道 Live 页面确认。</p></div></div>
 
@@ -2160,7 +2182,6 @@ const DEFAULT_NAV_CONFIG=[
   {view:"music",icon:"♫",label:"音乐"},
   {view:"focus",icon:"◎",label:"专注"},
   {view:"tools",icon:"⌘",label:"工具"},
-  {view:"links",icon:"↗",label:"链接"},
   {view:"settings",icon:"⚙",label:"设置"}
 ];
 const state={
@@ -2173,7 +2194,6 @@ const state={
   weatherGeo:store.get("weatherGeo",null),
   memo:store.get("memo",""),
   tasks:store.get("tasks",[]),
-  wheel:store.get("wheel",["中餐","日料","汉堡","越南粉","披萨","韩餐","火锅","随便吃点"]),
   upcomingManual:migrateUpcomingManual(),
   upcomingPins:store.get("upcomingPins",[]),
   upcomingHorizon:store.get("upcomingHorizon",14),
@@ -2203,7 +2223,6 @@ function applyProfile(){
 function applyTheme(){
   let t=state.theme;if(t==="auto")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
   document.documentElement.dataset.theme=t;$("#themeSelect").value=state.theme;
-  if(window.__wheelReady)drawWheel();
   try{
     if(window.__deskboardInitialized__)$("#deskboardFrame")?.contentWindow?.postMessage({type:"nexus-theme",theme:t},"*");
   }catch(_){}
@@ -2409,7 +2428,6 @@ function switchNexusView(view){
   if(view==='meal')ensureEmbeddedSite('meal');
   if(view==='music')ensureMusicTab();
   if(view==='focus')renderFocusTasks();
-  if(view==='links')renderDeskLinks();
 }
 
 /* ---------- Music ---------- */
@@ -2774,17 +2792,16 @@ function ensureEmbeddedSite(name){
 }
 
 
-const DESKBOARD_LINK_KEY='deskboard_extra_links_v1'; // legacy key kept for migration compatibility
-const DESKBOARD_FIXED_LINKS=[
-  {emoji:'✦',name:'ChatGPT',url:'https://chatgpt.com'},
-  {emoji:'𝕏',name:'Twitter',url:'https://x.com'},
-  {emoji:'▤',name:'Feedly',url:'https://feedly.com'},
-  {emoji:'♫',name:'YouTube Music',url:'https://music.youtube.com/'},
-  {emoji:'↗',name:'Fidelity',url:'https://www.fidelity.com'}
-];
-const DESKBOARD_DEFAULT_EXTRA=[
-  {emoji:'📚',name:'追更',url:'https://ximinhu66.github.io/tsugi-checker/'},
-  {emoji:'🍜',name:'吃什么',url:'https://ximinhu66.github.io/meal-orbit/'}
+const DESKBOARD_LINK_KEY='deskboard_extra_links_v1'; // legacy migration source
+const NEXUS_LINK_KEY='daily_nexus_links_v2';
+const NEXUS_DEFAULT_LINKS=[
+  {emoji:'✦',name:'ChatGPT',url:'https://chatgpt.com/',group:'common'},
+  {emoji:'𝕏',name:'Twitter',url:'https://x.com/',group:'common'},
+  {emoji:'▤',name:'Feedly',url:'https://feedly.com/',group:'common'},
+  {emoji:'♫',name:'YouTube Music',url:'https://music.youtube.com/',group:'common'},
+  {emoji:'↗',name:'Fidelity',url:'https://www.fidelity.com/',group:'common'},
+  {emoji:'📚',name:'追更',url:'https://ximinhu66.github.io/tsugi-checker/',group:'more'},
+  {emoji:'🍜',name:'吃什么',url:'https://ximinhu66.github.io/meal-orbit/',group:'more'}
 ];
 let deskLinkDraft=[];
 function normalizeDeskLinkUrl(url){
@@ -2793,49 +2810,126 @@ function normalizeDeskLinkUrl(url){
   try{const x=new URL(u);return /^https?:$/.test(x.protocol)?x.href:''}catch(e){return ''}
 }
 function deskLinkHost(url){try{return new URL(url).hostname.replace(/^www\./,'')}catch(e){return url}}
-function loadDeskExtraLinks(){
+function cloneLinks(rows){return rows.map(x=>({...x}))}
+function migrateUnifiedLinks(){
+  try{
+    const existing=JSON.parse(localStorage.getItem(NEXUS_LINK_KEY)||'null');
+    if(Array.isArray(existing))return existing;
+  }catch(_){}
+  let legacy=[];
   try{
     const raw=localStorage.getItem(DESKBOARD_LINK_KEY);
-    if(raw===null)return typeof structuredClone==='function'?structuredClone(DESKBOARD_DEFAULT_EXTRA):JSON.parse(JSON.stringify(DESKBOARD_DEFAULT_EXTRA));
-    const v=JSON.parse(raw);return Array.isArray(v)?v:DESKBOARD_DEFAULT_EXTRA;
-  }catch(e){return DESKBOARD_DEFAULT_EXTRA}
+    if(raw!==null){
+      const parsed=JSON.parse(raw);
+      if(Array.isArray(parsed))legacy=parsed;
+    }
+  }catch(_){}
+  const common=NEXUS_DEFAULT_LINKS.filter(x=>x.group==='common').map(x=>({...x}));
+  const extras=(legacy.length?legacy:NEXUS_DEFAULT_LINKS.filter(x=>x.group==='more')).map(x=>({...x,group:'more'}));
+  const merged=[...common,...extras];
+  localStorage.setItem(NEXUS_LINK_KEY,JSON.stringify(merged));
+  return merged;
 }
-function renderLinkCards(host,items){
-  host.innerHTML=items.length?items.map(x=>`<a class="nexus-link" href="${escapeAttr(x.url)}" target="_blank" rel="noopener"><span class="li">${escapeHtml(x.emoji||'🔗')}</span><span><b>${escapeHtml(x.name||deskLinkHost(x.url))}</b><small>${escapeHtml(deskLinkHost(x.url))}</small></span><span class="go">›</span></a>`).join(''):'<div class="link-empty">还没有额外链接。点右上角「管理」添加。</div>';
+function loadUnifiedLinks(){
+  const rows=migrateUnifiedLinks();
+  return rows.map(x=>({
+    emoji:String(x.emoji||'🔗').trim()||'🔗',
+    name:String(x.name||'').trim()||deskLinkHost(x.url||''),
+    url:normalizeDeskLinkUrl(x.url),
+    group:x.group==='more'?'more':'common'
+  })).filter(x=>x.url);
+}
+function saveUnifiedLinks(rows){
+  localStorage.setItem(NEXUS_LINK_KEY,JSON.stringify(rows));
+}
+function renderHomeLinkCards(host,items){
+  if(!host)return;
+  host.innerHTML=items.length?items.map(x=>`<a class="home-link" href="${escapeAttr(x.url)}" target="_blank" rel="noopener">
+    <span class="hli">${escapeHtml(x.emoji||'🔗')}</span>
+    <span><b>${escapeHtml(x.name||deskLinkHost(x.url))}</b><small>${escapeHtml(deskLinkHost(x.url))}</small></span>
+    <span class="hlgo">›</span>
+  </a>`).join(''):'<div class="link-empty" style="grid-column:1/-1">还没有链接。点「编辑」添加。</div>';
 }
 function renderDeskLinks(){
-  const extra=loadDeskExtraLinks();
-  renderLinkCards($("#deskFixedLinks"),DESKBOARD_FIXED_LINKS);
-  renderLinkCards($("#deskExtraLinks"),extra);
-  $("#deskLinkCount").textContent=`${DESKBOARD_FIXED_LINKS.length+extra.length} 个入口`;
+  const rows=loadUnifiedLinks(),common=rows.filter(x=>x.group==='common'),more=rows.filter(x=>x.group==='more');
+  renderHomeLinkCards($("#homeCommonLinks"),common);
+  renderHomeLinkCards($("#homeMoreLinks"),more);
+  if($("#homeMoreCount"))$("#homeMoreCount").textContent=more.length?`· ${more.length}`:'';
+  const toggle=$("#toggleMoreLinks");
+  if(toggle)toggle.style.display=more.length?'flex':'none';
 }
 function renderDeskLinkEditor(){
-  $("#deskLinkEditor").innerHTML=deskLinkDraft.length?deskLinkDraft.map((x,i)=>`<div class="link-edit-row" data-link-row="${i}"><input class="field" data-link-field="emoji" value="${escapeAttr(x.emoji||'🔗')}" maxlength="4"><input class="field" data-link-field="name" value="${escapeAttr(x.name||'')}" placeholder="名称"><input class="field" data-link-field="url" value="${escapeAttr(x.url||'')}" placeholder="https://..."><button data-remove-link="${i}">删除</button></div>`).join(''):'<div class="link-empty">还没有额外链接。</div>';
-  $$('[data-remove-link]').forEach(b=>b.onclick=()=>{deskLinkDraft.splice(+b.dataset.removeLink,1);renderDeskLinkEditor()});
+  const host=$("#deskLinkEditor");if(!host)return;
+  host.innerHTML=deskLinkDraft.length?deskLinkDraft.map((x,i)=>`<div class="link-edit-row" data-link-row="${i}">
+    <input class="field" data-link-field="emoji" value="${escapeAttr(x.emoji||'🔗')}" maxlength="4" title="图标">
+    <input class="field" data-link-field="name" value="${escapeAttr(x.name||'')}" placeholder="名称">
+    <input class="field" data-link-field="url" value="${escapeAttr(x.url||'')}" placeholder="https://...">
+    <select class="field" data-link-field="group"><option value="common" ${x.group!=='more'?'selected':''}>常用</option><option value="more" ${x.group==='more'?'selected':''}>更多</option></select>
+    <div class="link-edit-actions">
+      <button data-move-link="${i}" data-dir="-1" title="上移">↑</button>
+      <button data-move-link="${i}" data-dir="1" title="下移">↓</button>
+      <button data-remove-link="${i}" title="删除">×</button>
+    </div>
+  </div>`).join(''):'<div class="link-empty">还没有链接。</div>';
+  $$('[data-remove-link]').forEach(b=>b.onclick=()=>{
+    syncDeskLinkDraftFromEditor();deskLinkDraft.splice(+b.dataset.removeLink,1);renderDeskLinkEditor()
+  });
+  $$('[data-move-link]').forEach(b=>b.onclick=()=>{
+    syncDeskLinkDraftFromEditor();
+    const i=+b.dataset.moveLink,j=i+(+b.dataset.dir);
+    if(j<0||j>=deskLinkDraft.length)return;
+    [deskLinkDraft[i],deskLinkDraft[j]]=[deskLinkDraft[j],deskLinkDraft[i]];
+    renderDeskLinkEditor();
+  });
 }
 function syncDeskLinkDraftFromEditor(){
   $$('[data-link-row]').forEach(row=>{
-    const i=+row.dataset.linkRow;
-    const get=f=>row.querySelector(`[data-link-field="${f}"]`)?.value||'';
-    deskLinkDraft[i]={emoji:get('emoji').trim()||'🔗',name:get('name').trim(),url:get('url').trim()};
+    const i=+row.dataset.linkRow,get=f=>row.querySelector(`[data-link-field="${f}"]`)?.value||'';
+    deskLinkDraft[i]={
+      emoji:get('emoji').trim()||'🔗',
+      name:get('name').trim(),
+      url:get('url').trim(),
+      group:get('group')==='more'?'more':'common'
+    };
   });
 }
-$("#manageDeskLinks").onclick=()=>{deskLinkDraft=loadDeskExtraLinks().map(x=>({...x}));renderDeskLinkEditor();openModal('#linksModal')};
-$("#refreshDeskLinks").onclick=renderDeskLinks;
+function openHomeLinkEditor(){
+  deskLinkDraft=cloneLinks(loadUnifiedLinks());renderDeskLinkEditor();openModal('#linksModal');
+}
+$("#manageHomeLinks").onclick=openHomeLinkEditor;
+$("#toggleMoreLinks").onclick=()=>{
+  const wrap=$("#homeMoreLinksWrap"),btn=$("#toggleMoreLinks");if(!wrap)return;
+  const opening=wrap.hidden;wrap.hidden=!opening;btn?.classList.toggle('open',opening);
+};
 $("#addDeskLink").onclick=()=>{
   syncDeskLinkDraftFromEditor();
-  const url=normalizeDeskLinkUrl($("#newDeskLinkUrl").value);
-  if(!url)return;
-  deskLinkDraft.push({emoji:$("#newDeskLinkEmoji").value.trim()||'🔗',name:$("#newDeskLinkName").value.trim()||deskLinkHost(url),url});
-  $("#newDeskLinkEmoji").value='🔗';$("#newDeskLinkName").value='';$("#newDeskLinkUrl").value='';renderDeskLinkEditor();
+  const url=normalizeDeskLinkUrl($("#newDeskLinkUrl").value);if(!url)return;
+  deskLinkDraft.push({
+    emoji:$("#newDeskLinkEmoji").value.trim()||'🔗',
+    name:$("#newDeskLinkName").value.trim()||deskLinkHost(url),
+    url,
+    group:$("#newDeskLinkGroup").value==='more'?'more':'common'
+  });
+  $("#newDeskLinkEmoji").value='🔗';$("#newDeskLinkName").value='';$("#newDeskLinkUrl").value='';
+  renderDeskLinkEditor();
 };
 $("#saveDeskLinks").onclick=()=>{
   syncDeskLinkDraftFromEditor();
-  const clean=deskLinkDraft.map(x=>{const url=normalizeDeskLinkUrl(x.url);return url?{emoji:String(x.emoji||'🔗').trim()||'🔗',name:String(x.name||'').trim()||deskLinkHost(url),url}:null}).filter(Boolean);
-  localStorage.setItem(DESKBOARD_LINK_KEY,JSON.stringify(clean));deskLinkDraft=clean;renderDeskLinks();closeModals();
+  const clean=deskLinkDraft.map(x=>{
+    const url=normalizeDeskLinkUrl(x.url);
+    return url?{
+      emoji:String(x.emoji||'🔗').trim()||'🔗',
+      name:String(x.name||'').trim()||deskLinkHost(url),
+      url,
+      group:x.group==='more'?'more':'common'
+    }:null;
+  }).filter(Boolean);
+  saveUnifiedLinks(clean);deskLinkDraft=cloneLinks(clean);renderDeskLinks();closeModals();
 };
-$("#resetDeskLinks").onclick=()=>{deskLinkDraft=DESKBOARD_DEFAULT_EXTRA.map(x=>({...x}));renderDeskLinkEditor()};
-window.addEventListener('storage',e=>{if(e.key===DESKBOARD_LINK_KEY)renderDeskLinks()});
+$("#resetDeskLinks").onclick=()=>{deskLinkDraft=cloneLinks(NEXUS_DEFAULT_LINKS);renderDeskLinkEditor()};
+window.addEventListener('storage',e=>{
+  if(e.key===NEXUS_LINK_KEY||e.key===DESKBOARD_LINK_KEY)renderDeskLinks();
+});
 window.addEventListener("storage",e=>{
   if(e.key===TSUGI_ARTIST_KEY){
     renderUpcomingArtists();
@@ -2889,8 +2983,6 @@ $("#memo").value=state.memo;let memoTimer;$("#memo").oninput=e=>{$("#memoStatus"
 function renderTasks(){$("#tasks").innerHTML=state.tasks.map((t,i)=>`<button class="taskchip ${t.done?'done':''}" data-i="${i}" title="单击完成，双击删除">${escapeHtml(t.text)}</button>`).join("");$("#memoEmpty").classList.toggle("show",state.tasks.length===0);$$('.taskchip').forEach(el=>{el.onclick=()=>{const i=+el.dataset.i;state.tasks[i].done=!state.tasks[i].done;store.set('tasks',state.tasks);renderTasks()};el.ondblclick=()=>{state.tasks.splice(+el.dataset.i,1);store.set('tasks',state.tasks);renderTasks()}});renderFocusTasks()}
 function addTask(){const v=$("#taskInput").value.trim();if(!v)return;state.tasks.push({text:v,done:false});$("#taskInput").value="";store.set('tasks',state.tasks);renderTasks()}$("#addTask").onclick=addTask;$("#taskInput").onkeydown=e=>{if(e.key==='Enter')addTask()};renderTasks();
 
-const wheel=$("#wheel"),ctx=wheel.getContext('2d');let wheelAngle=0,spinning=false;function wheelColors(i,n){const hue=222+(i*(78/Math.max(1,n-1)));return `hsl(${hue} 72% ${document.documentElement.dataset.theme==='light'?62:58}% / .88)`}function drawWheel(){if(!ctx)return;const n=state.wheel.length,cx=240,cy=240,r=222;ctx.clearRect(0,0,480,480);for(let i=0;i<n;i++){const a0=wheelAngle+i*2*Math.PI/n-Math.PI/2,a1=a0+2*Math.PI/n;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a0,a1);ctx.closePath();ctx.fillStyle=wheelColors(i,n);ctx.fill();ctx.strokeStyle='rgba(255,255,255,.25)';ctx.lineWidth=2;ctx.stroke();ctx.save();ctx.translate(cx,cy);ctx.rotate(a0+Math.PI/n);ctx.textAlign='right';ctx.fillStyle='#fff';ctx.font='800 30px system-ui';ctx.fillText(state.wheel[i],r-20,10);ctx.restore()}ctx.beginPath();ctx.arc(cx,cy,54,0,Math.PI*2);ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--panel2');ctx.fill();ctx.strokeStyle='rgba(255,255,255,.18)';ctx.stroke()}window.__wheelReady=true;drawWheel();
-$("#spinBtn").onclick=()=>{if(spinning||state.wheel.length<2)return;spinning=true;$("#wheelResult").textContent='正在决定…';const start=performance.now(),dur=3000+Math.random()*900,from=wheelAngle,to=from+(5+Math.random()*4)*Math.PI*2+Math.random()*Math.PI*2;function anim(now){const p=Math.min(1,(now-start)/dur),ease=1-Math.pow(1-p,4);wheelAngle=from+(to-from)*ease;drawWheel();if(p<1)requestAnimationFrame(anim);else{spinning=false;const n=state.wheel.length,normalized=(((-wheelAngle)%(Math.PI*2))+Math.PI*2)%(Math.PI*2),idx=Math.floor((normalized+Math.PI/n)/(2*Math.PI/n))%n;$("#wheelResult").textContent='→ '+state.wheel[idx]}}requestAnimationFrame(anim)};$("#shuffleWheel").onclick=()=>{state.wheel.sort(()=>Math.random()-.5);store.set('wheel',state.wheel);drawWheel()};$("#editWheel").onclick=()=>{$("#wheelEditor").value=state.wheel.join('\n');openModal('#wheelModal')};$("#saveWheel").onclick=()=>{const a=$("#wheelEditor").value.split('\n').map(x=>x.trim()).filter(Boolean).slice(0,18);if(a.length>=2){state.wheel=a;store.set('wheel',a);drawWheel();closeModals()}};
 
 
 /* ---------- Upcoming · 精选发售与事件 ---------- */
